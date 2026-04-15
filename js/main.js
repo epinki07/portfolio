@@ -19,8 +19,23 @@
 
   let typingTick;
   let typingRunId = 0;
-  let currentLang = localStorage.getItem('portfolio-lang') || 'es';
-  let currentTheme = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+
+  function getStoredValue(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function setStoredValue(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch (error) {}
+  }
+
+  let currentLang = getStoredValue('portfolio-lang') || 'es';
+  let currentTheme = getStoredValue('portfolio-theme') || (document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
 
   function setInnerHtml(id, value) {
     const element = document.getElementById(id);
@@ -69,8 +84,9 @@
 
   function applyTheme(theme) {
     currentTheme = theme === 'light' ? 'light' : 'dark';
-    document.documentElement.dataset.theme = currentTheme;
-    localStorage.setItem('portfolio-theme', currentTheme);
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    if (document.body) document.body.setAttribute('data-theme', currentTheme);
+    setStoredValue('portfolio-theme', currentTheme);
     if (metaThemeColor) {
       metaThemeColor.setAttribute('content', currentTheme === 'light' ? '#f7fbff' : '#0a0a0a');
     }
@@ -80,7 +96,7 @@
   function applyTranslations(lang) {
     const translation = translations[lang];
     currentLang = lang;
-    localStorage.setItem('portfolio-lang', lang);
+    setStoredValue('portfolio-lang', lang);
     document.documentElement.lang = lang;
     document.title = translation.meta.title;
     pageTitle.textContent = translation.meta.title;

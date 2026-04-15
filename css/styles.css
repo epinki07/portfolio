@@ -47,6 +47,7 @@
   --footer-text:       var(--border2);
   --thumb-dark-1:      #111;
   --thumb-dark-2:      #1a1a1a;
+  --profile-object-position: center 24%;
 }
 
 html {
@@ -233,9 +234,15 @@ nav {
 .btn-ghost:hover { border-color: var(--muted); transform: translateY(-2px); }
 .btn svg { width: 16px; height: 16px; }
 
-.hero-avatar-wrap { flex-shrink: 0; position: relative; }
+.hero-avatar-wrap {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .hero-avatar {
-  width: 200px; height: 200px; border-radius: 50%;
+  width: 244px; height: 244px; border-radius: 50%;
   border: 2px solid var(--border2);
   background: linear-gradient(135deg, var(--hero-avatar-grad-1), var(--hero-avatar-grad-2));
   display: flex; align-items: center; justify-content: center;
@@ -247,6 +254,7 @@ nav {
 .about-avatar img {
   width: 100%; height: 100%;
   object-fit: cover;
+  object-position: var(--profile-object-position);
   border-radius: 50%;
   display: block;
 }
@@ -308,7 +316,7 @@ section {
   border-radius: 16px; padding: 2rem 1.5rem; text-align: center;
 }
 .about-avatar {
-  width: 90px; height: 90px; border-radius: 50%;
+  width: 102px; height: 102px; border-radius: 50%;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   display: flex; align-items: center; justify-content: center;
   font-size: 2.2rem; font-weight: 800; color: var(--text-inverse);
@@ -659,7 +667,16 @@ footer span { color: var(--accent); }
     width: 100%;
     justify-content: center;
   }
-  .hero-avatar { width: 150px; height: 150px; font-size: 3rem; }
+  .hero-avatar-wrap {
+    width: 100%;
+    align-self: center;
+  }
+  .hero-avatar {
+    width: 178px;
+    height: 178px;
+    font-size: 3.2rem;
+    margin: 0 auto;
+  }
   .online-pill {
     position: static;
     transform: none;
@@ -775,8 +792,8 @@ footer span { color: var(--accent); }
     padding: 4rem .85rem;
   }
   .hero-avatar {
-    width: 132px;
-    height: 132px;
+    width: 164px;
+    height: 164px;
   }
   .hero-role {
     font-size: .92rem;
@@ -872,6 +889,10 @@ footer span { color: var(--accent); }
   .hero-role {
     font-size: .92rem;
   }
+  .hero-avatar {
+    width: 152px;
+    height: 152px;
+  }
   .online-pill {
     width: 100%;
     justify-content: center;
@@ -948,8 +969,8 @@ footer span { color: var(--accent); }
     font-size: 1.32rem;
   }
   .hero-avatar {
-    width: 118px;
-    height: 118px;
+    width: 138px;
+    height: 138px;
   }
   .hero-role {
     font-size: .88rem;
