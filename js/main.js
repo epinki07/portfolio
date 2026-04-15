@@ -66,6 +66,13 @@
     startTyping(translation.typingLabel);
   }
 
+  function setMenuState(isOpen) {
+    hamburger.classList.toggle('open', isOpen);
+    navList.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.classList.toggle('menu-open', isOpen);
+  }
+
   langToggle.addEventListener('click', () => {
     applyTranslations(currentLang === 'es' ? 'en' : 'es');
   });
@@ -75,15 +82,17 @@
   function openModal(modal) { modal.classList.add('active'); }
   function closeModal(modal) { modal.classList.remove('active'); }
 
-  certificateTrigger.setAttribute('role', 'button');
-  certificateTrigger.setAttribute('tabindex', '0');
-  certificateTrigger.addEventListener('click', () => openModal(certificateModal));
-  certificateTrigger.addEventListener('keydown', event => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      openModal(certificateModal);
-    }
-  });
+  if (certificateTrigger && certificateModal) {
+    certificateTrigger.setAttribute('role', 'button');
+    certificateTrigger.setAttribute('tabindex', '0');
+    certificateTrigger.addEventListener('click', () => openModal(certificateModal));
+    certificateTrigger.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(certificateModal);
+      }
+    });
+  }
 
   document.querySelectorAll('.modal-overlay').forEach(overlay => {
     overlay.addEventListener('click', event => {
@@ -99,6 +108,7 @@
   });
   document.addEventListener('keydown', event => {
     if (event.key !== 'Escape') return;
+    setMenuState(false);
     document.querySelectorAll('.modal-overlay.active').forEach(closeModal);
   });
 
@@ -141,15 +151,14 @@
 
   /* ── HAMBURGER MENU ── */
   hamburger.addEventListener('click', () => {
-    const isOpen = hamburger.classList.toggle('open');
-    navList.classList.toggle('open', isOpen);
-    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    setMenuState(!hamburger.classList.contains('open'));
   });
   navList.querySelectorAll('a').forEach(anchor => anchor.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    navList.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
+    setMenuState(false);
   }));
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) setMenuState(false);
+  });
 
   /* ── SCROLL PROGRESS BAR ── */
   window.addEventListener('scroll', () => {
@@ -197,20 +206,34 @@
 
   /* ── ANIMATED COUNTER ── */
   document.querySelectorAll('[data-count]').forEach(element => {
-    const target = +element.dataset.count;
+    const target = Number(element.dataset.count);
+    if (!target || reducedMotion.matches || typeof IntersectionObserver !== 'function') {
+      element.textContent = String(target || element.textContent);
+      return;
+    }
+
+    const animateCounter = targetElement => {
+      let current = 0;
+      const step = Math.max(1, Math.ceil(target / 30));
+      targetElement.textContent = '0';
+      const tick = setInterval(() => {
+        current = Math.min(current + step, target);
+        targetElement.textContent = String(current);
+        if (current >= target) clearInterval(tick);
+      }, 40);
+    };
+
     const countObs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         countObs.unobserve(entry.target);
-        let current = 0;
-        const step = Math.ceil(target / 30);
-        const tick = setInterval(() => {
-          current = Math.min(current + step, target);
-          entry.target.textContent = current;
-          if (current >= target) clearInterval(tick);
-        }, 40);
+        animateCounter(entry.target);
       });
-    }, { threshold: 0.5 });
+    }, {
+      threshold: 0.2,
+      rootMargin: '0px 0px -10% 0px',
+    });
+
     countObs.observe(element);
   });
 
