@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title id="page-title">Diego Ramirez Magaña | Portafolio</title>
+
+  <link rel="canonical" href="https://dramirezmagana.github.io/portfolio/"/>
+
+  <!-- Open Graph / LinkedIn preview -->
+  <meta property="og:type"        content="website"/>
+  <meta property="og:title"       id="meta-og-title" content="Diego Ramirez Magaña | Software, backend e innovación aplicada"/>
+  <meta property="og:description" id="meta-og-description" content="Estudiante de software con proyectos en Java, Python, IoT y StarkNet. Dos premios en competencias y enfoque en prácticas y oportunidades junior."/>
+  <meta property="og:image"       content="buildathon-constancia.png"/>
+  <meta name="description"        id="meta-description" content="Portafolio de Diego Ramirez Magaña. Estudiante de software con proyectos en Java, Python, IoT y StarkNet, abierto a prácticas y oportunidades junior."/>
+  <meta name="theme-color"        content="#3b82f6"/>
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%233b82f6'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,sans-serif' font-weight='800' font-size='14' fill='white'>DR</text></svg>"/>
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='36' fill='%233b82f6'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,sans-serif' font-weight='800' font-size='78' fill='white'>DR</text></svg>"/>
+
+  <!-- JSON-LD Schema.org Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Diego Ramirez Magaña",
+    "givenName": "Diego",
+    "familyName": "Ramirez Magaña",
+    "jobTitle": "Estudiante de Ingeniería en Software y Negocios Digitales | Abierto a prácticas y roles junior",
+    "email": "mailto:dramirezmagana@gmail.com",
+    "url": "https://dramirezmagana.github.io/portfolio/",
+    "nationality": "Mexican",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Tecnológico del Software",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mérida",
+        "addressRegion": "Yucatán",
+        "addressCountry": "MX"
+      }
+    },
+    "award": [
+      "1er Lugar — Starknet Buildathon 2025 (Proyecto Rent Chain)",
+      "3er Lugar — Invent for the Planet 2026 (IFTP2026)"
+    ],
+    "knowsAbout": [
+      "Java", "Python", "HTML", "POO",
+      "StarkNet", "Cairo", "Smart Contracts", "Blockchain",
+      "Linux", "Kali Linux", "Cisco Packet Tracer",
+      "AWS", "Streamlit", "Git"
+    ],
+    "sameAs": [
+      "https://github.com/epinki07",
+      "https://www.linkedin.com/in/diego-ramirez-maga%C3%B1a-b15022298/"
+    ]
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div id="scroll-progress"></div>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-logo">diego.dev()</span>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" id="nav-about">Sobre mí</a></li>
+      <li><a href="#skills" id="nav-skills">Habilidades</a></li>
+      <li><a href="#logros" id="nav-achievements">Logros</a></li>
+      <li><a href="#portafolio" id="nav-projects">Proyectos</a></li>
+      <li><a href="#contacto" id="nav-contact">Contacto</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-btn" id="lang-toggle" aria-label="Cambiar a inglés">
+        <span class="lang-flag">🇺🇸</span><span class="lang-label">EN</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <span class="hero-label" id="typing-label"></span>
+        <h1>Diego <span class="highlight">Ramirez</span><br/>Magaña</h1>
+        <p class="hero-role" id="hero-role">Estudiante de <strong>Software &amp; Negocios Digitales</strong></p>
+        <p class="hero-desc" id="hero-desc">
+          Busco oportunidades de prácticas y roles junior donde pueda aportar en
+          backend, automatización y construcción de producto. Mi mejor evidencia hoy:
+          proyectos reales en Java, Python, IoT y StarkNet, además de dos podios en
+          competencias técnicas.
+        </p>
+        <div class="hero-btns">
+          <a href="#portafolio" class="btn btn-primary" id="hero-btn-achievements">Ver proyectos clave</a>
+          <a href="#contacto" class="btn btn-ghost" id="hero-btn-contact">Contáctame</a>
+        </div>
+      </div>
+      <div class="hero-avatar-wrap">
+        <div class="hero-avatar">
+          <img src="profile.jpg" alt="Foto de Diego Ramirez Magaña, estudiante de Ingeniería en Software"/>
+        </div>
+        <span class="online-pill" id="availability-pill">Abierto a prácticas / junior</span>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+      <span id="scroll-hint-label">desplázate</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container container-wide">
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-avatar">
+            <img src="profile.jpg" alt="Retrato de Diego Ramirez Magaña" loading="lazy" decoding="async"/>
+          </div>
+          <h3>Diego Ramirez Magaña</h3>
+          <p id="about-card-program">Tecnológico del Software<br/>Ing. en Software &amp; Negocios Digitales</p>
+          <div class="about-stats">
+            <div class="stat">
+              <div class="stat-num">1°</div>
+              <div class="stat-label" id="stat-year-label">Etapa actual</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" data-count="2">0</div>
+              <div class="stat-label" id="stat-awards-label">Premios ganados</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">2+</div>
+              <div class="stat-label" id="stat-languages-label">Lenguajes</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" data-count="9">0</div>
+              <div class="stat-label" id="stat-repos-label">Repos públicos</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-body">
+          <span class="section-tag" id="about-tag">// sobre mí</span>
+          <h2 class="section-title" id="about-title">Perfil <span>profesional</span></h2>
+          <div class="divider"></div>
+          <p id="about-p1">
+            Soy <strong>Diego Ramirez Magaña</strong>, estudiante de
+            <strong>Ingeniería en Software y Negocios Digitales</strong> en el
+            <strong>Tecnológico del Software</strong>. Me interesa iniciar mi carrera
+            en equipos donde pueda aprender rápido y aportar desde el día uno,
+            especialmente en backend y desarrollo orientado a producto.
+          </p>
+          <p id="about-p2">
+            Mi portafolio ya muestra algo que quiero comunicar a reclutadores:
+            no espero a que todo me lo asignen. He construido proyectos propios en
+            <strong>Java</strong> y <strong>Python</strong>, exploré
+            <strong>blockchain con StarkNet/Cairo</strong> y participé en soluciones
+            con <strong>IoT, sensores y backend</strong> que terminaron compitiendo y
+            obteniendo resultados.
+          </p>
+          <p id="about-p3">
+            También me interesa experimentar con <strong>IA aplicada al desarrollo</strong>
+            y con <strong>ciberseguridad</strong> desde un enfoque práctico. Me gusta
+            probar herramientas, entender sus límites y convertir esa curiosidad en
+            prototipos, automatizaciones y aprendizaje técnico usable.
+          </p>
+          <div class="now-learning">
+            <span class="now-learning-icon" aria-hidden="true">🧠</span>
+            <div class="now-learning-body">
+              <span class="now-learning-label" id="now-learning-label">// intereses actuales</span>
+              <p class="now-learning-text" id="now-learning-text">
+                Hoy estoy especialmente interesado en
+                <strong>IA aplicada al desarrollo</strong>, en cómo puede acelerar
+                prototipos, análisis y automatizaciones, y en
+                <strong>ciberseguridad</strong> como campo de exploración técnica.
+                Me gusta experimentar con herramientas, probar flujos reales y entender
+                cómo integrarlas de forma útil en software.
+              </p>
+            </div>
+          </div>
+          <div class="chips">
+            <span class="chip" id="chip-location">📍 México</span>
+            <span class="chip" id="chip-year">💼 Abierto a prácticas / junior</span>
+            <span class="chip" id="chip-awards">🏆 2 premios en competencias</span>
+            <span class="chip" id="chip-email">📧 dramirezmagana@gmail.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="education-showcase reveal">
+        <div class="education-header">
+          <div class="education-header-copy">
+            <span class="section-tag" id="education-section-tag">// formación</span>
+            <h3 class="education-title" id="education-title">Mi ruta de formación</h3>
+            <p class="education-overview" id="education-text">
+              Mi formación está construida por etapas. Primero una base fuerte en
+              programación, estructuras de datos, bases de datos, redes y sistemas;
+              después una etapa de ingeniería de software con trabajo en equipo y
+              contexto de negocio; y más adelante una especialización que puede orientarse
+              a IA/datos o a nube/ciberseguridad.
+            </p>
+          </div>
+        </div>
+        <div class="education-kpis">
+          <div class="education-kpi">
+            <strong id="education-kpi-terms-value">13</strong>
+            <span id="education-kpi-terms-label">cuatrimestres del plan</span>
+          </div>
+          <div class="education-kpi">
+            <strong id="education-kpi-duration-value">4 años</strong>
+            <span id="education-kpi-duration-label">más un bloque adicional de formación</span>
+          </div>
+          <div class="education-kpi">
+            <strong id="education-kpi-tracks-value">2 rutas</strong>
+            <span id="education-kpi-tracks-label">optativas: IA/datos o nube/ciberseguridad</span>
+          </div>
+        </div>
+        <figure class="education-figure">
+          <div class="education-image-shell">
+            <img
+              id="education-image"
+              src="assets/formacion/mapa-curricular-aclarado.svg"
+              alt="Resumen visual del mapa curricular de Desarrollo de Software y Negocios Digitales"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption class="education-caption" id="education-caption">
+            Versión aclarada del mapa curricular original para que se pueda leer mejor sin perder su estructura.
+          </figcaption>
+          <div class="education-actions">
+            <button class="education-zoom" id="education-zoom" type="button">Abrir mapa completo</button>
+          </div>
+        </figure>
+        <div class="education-copy">
+          <ul class="education-points">
+            <li id="education-point-1">Base sólida en programación, estructuras de datos, bases de datos, redes y sistemas operativos.</li>
+            <li id="education-point-2">Etapa intermedia enfocada en desarrollo de software, colaboración, pruebas y visión de negocio.</li>
+            <li id="education-point-3">Cierre con especialización en áreas como nube, DevOps, computación distribuida, IA/datos o ciberseguridad.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <span class="section-tag" id="skills-tag">// habilidades</span>
+      <h2 class="section-title" id="skills-title">Con qué <span>trabajo</span></h2>
+      <div class="divider"></div>
+      <div class="skills-categories">
+
+        <div>
+          <div class="skill-category-label" id="skills-category-dev">💻 Programación &amp; Desarrollo</div>
+          <div class="skills-grid">
+
+            <div class="skill-card">
+              <span class="skill-emoji" aria-hidden="true">☕</span>
+              <div class="skill-name">Java</div>
+              <div class="skill-level" id="skill-java-level">Lenguaje principal</div>
+              <div class="skill-meta" id="skill-java-meta">apps, ejercicios y patrones</div>
+              <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+            </div>
+
+            <div class="skill-card">
+              <span class="skill-emoji" aria-hidden="true">🐍</span>
+              <div class="skill-name">Python</div>
+              <div class="skill-level" id="skill-python-level">Análisis y automatización</div>
+              <div class="skill-meta" id="skill-python-meta">Streamlit, CLI y datos</div>
+              <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
+            </div>
+
+            <div class="skill-card">
+              <span class="skill-emoji" aria-hidden="true">🟨</span>
+              <div class="skill-name">JavaScript / Node.js</div>
+              <div class="skill-level" id="skill-oop-level">Uso en proyecto real</div>
+              <div class="skill-meta" id="skill-oop-meta">Food Sense · APIs · backend</div>
+              <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+            </div>
+
+            <div class="skill-card">
+              <span class="skill-emoji" aria-hidden="true">⛓️</span>
+              <div class="skill-name">Cairo / StarkNet</div>
+              <div class="skill-level" id="skill-html-level">Exploración aplicada</div>
+              <div class="skill-meta" id="skill-html-meta">contratos · eventos · storage</div>
+              <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+            </div>
+
+          </div>
+        </div>
+
+        <div>
+          <div class="skill-category-label" id="skills-category-tools">🛠️ Herramientas &amp; Control de versiones</div>
+          <div class="skills-grid">
+
+            <div class="skill-card">
+              <span class="skill-emoji" aria-hidden="true">🐙</span>
+              <div class="skill-name" id="skill-git-name">Git</div>
+              <div class="skill-level" id="skill-git-level">Uso constante</div>
+              <div class="skill-meta" id="skill-git-meta">versionado de proyectos públicos</div>
+              <div class="skill-bar"><div class="skill-fill" style="width:58%"></div></div>
+            </div>
+
+            <div class="skill-card">
+              <span class="skill-emoji" aria-hidden="true">🔍</span>
+              <div class="skill-name">QA</div>
+              <div class="skill-level" id="skill-qa-level">Base de calidad</div>
+              <div class="skill-meta" id="skill-qa-meta">pruebas y enfoque académico</div>
+              <div class="skill-bar"><div class="skill-fill" style="width:45%"></div></div>
+            </div>
+
+          </div>
+        </div>
+
+        <div>
+          <div class="skill-category-label" id="skills-category-systems">🖥️ Sistemas operativos, Redes &amp; Virtualización</div>
+          <div class="skills-grid">
+
+            <div class="skill-card">
+              <span class="skill-emoji" aria-hidden="true">🐧</span>
+              <div class="skill-name">Linux</div>
+              <div class="skill-level" id="skill-linux-level">Entorno técnico</div>
+              <div class="skill-meta" id="skill-linux-meta">terminal, SO y práctica</div>
+              <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
+            </div>
+
+            <div class="skill-card">
+              <span class="skill-emoji" aria-hidden="true">🔐</span>
+              <div class="skill-name">Kali Linux</div>
+              <div class="skill-level" id="skill-kali-level">Exploración</div>
+              <div class="skill-meta" id="skill-kali-meta">laboratorios y curiosidad técnica</div>
+              <div class="skill-bar"><div class="skill-fill" style="width:40%"></div></div>
+            </div>
+
+            <div class="skill-card">
+              <span class="skill-emoji" aria-hidden="true">📦</span>
+              <div class="skill-name" id="skill-vm-name">Máquinas Virtuales</div>
+              <div class="skill-level" id="skill-vm-level">Laboratorios</div>
+              <div class="skill-meta" id="skill-vm-meta">VirtualBox y entornos aislados</div>
+              <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
+            </div>
+
+            <div class="skill-card">
+              <span class="skill-emoji" aria-hidden="true">🔵</span>
+              <div class="skill-name">Cisco Packet Tracer</div>
+              <div class="skill-level" id="skill-cisco-level">Redes base</div>
+              <div class="skill-meta" id="skill-cisco-meta">Packet Tracer y fundamentos</div>
+              <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
+            </div>
+
+          </div>
+        </div>
+
+        <div>
+          <div class="skill-category-label" id="skills-category-cloud">☁️ Cloud</div>
+          <div class="skills-grid">
+
+            <div class="skill-card">
+              <span class="skill-emoji" aria-hidden="true">🟠</span>
+              <div class="skill-name">AWS</div>
+              <div class="skill-level" id="skill-aws-level">Formación validada</div>
+              <div class="skill-meta" id="skill-aws-meta">AWS Academy</div>
+              <div class="skill-bar"><div class="skill-fill" style="width:45%"></div></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGROS -->
+  <section id="logros">
+    <div class="container">
+      <span class="section-tag" id="achievements-tag">// logros y reconocimientos</span>
+      <h2 class="section-title" id="achievements-title">Resultados <span>comprobables</span></h2>
+      <div class="divider"></div>
+      <div class="logros-list">
+
+        <div class="logro-card">
+          <div class="logro-icon thumb-blue" aria-hidden="true">🥉</div>
+          <div class="logro-info">
+            <h3 id="achievement-iftp-title">3er Lugar — Invent for the Planet 2026 (IFTP2026)</h3>
+            <p id="achievement-iftp-desc">
+              Participé en el desarrollo de una solución IoT para monitoreo remoto de
+              refrigeradores con cámaras, sensores y alertas en tiempo real. El proyecto
+              obtuvo 3er lugar por su enfoque práctico y por combinar hardware y software
+              para resolver un problema cotidiano.
+            </p>
+            <p id="achievement-iftp-extra" style="margin-top:.6rem; font-size:.78rem; color:var(--accent2);">
+              ⚡ <strong style="color:var(--accent2);">Extra durante el desarrollo:</strong>
+              Mientras trabajaba en este proyecto construí de forma paralela
+              <strong style="color:var(--text);">SQAD</strong>, un sistema de control de
+              calidad en Java para gestionar inventarios de alimentos por tipo
+              (refrigerados, congelados y secos), con alertas automáticas por temperatura,
+              humedad y caducidad. Lo desarrollé por iniciativa propia para llevar lo
+              aprendido un paso más allá.
+            </p>
+          </div>
+          <span class="logro-badge badge-silver" id="achievement-iftp-badge">🥉 3er Lugar</span>
+        </div>
+
+        <div class="logro-card logro-card--expandable">
+          <div class="logro-icon thumb-purple" aria-hidden="true">🥇</div>
+          <div class="logro-info">
+            <h3 id="achievement-buildathon-title">1er Lugar — Starknet Buildathon · Proyecto "Rent Chain"</h3>
+            <p id="achievement-buildathon-desc">
+              Obtuve el primer lugar con <strong>Rent Chain</strong>, una propuesta de
+              renta descentralizada construida con DApps, contratos inteligentes en
+              Layer 2 y tecnología de StarkNet. Este proyecto valida mi capacidad para
+              adaptarme rápido a tecnologías nuevas y ejecutar bajo presión competitiva.
+            </p>
+            <div class="constancia-thumb" id="certificate-trigger">
+              <img src="buildathon-constancia.png" alt="Vista previa de la constancia del Starknet Buildathon 2025" class="constancia-thumb-img" loading="lazy" decoding="async"/>
+              <div class="constancia-thumb-info">
+                <span class="constancia-thumb-name" id="certificate-title">📄 Constancia oficial</span>
+                <span class="constancia-thumb-meta" id="certificate-meta">Starknet Buildathon 2025 · Clic para ver →</span>
+              </div>
+            </div>
+          </div>
+          <span class="logro-badge badge-gold" id="achievement-buildathon-badge">🥇 1er Lugar</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTAFOLIO -->
+  <section id="portafolio">
+    <div class="container">
+      <span class="section-tag" id="projects-tag">// portafolio</span>
+      <h2 class="section-title" id="projects-title">Proyectos <span>seleccionados</span></h2>
+      <p class="section-sub" id="projects-sub">Estos repos muestran cómo pienso, qué stack he usado y qué tipo de problemas ya puedo resolver o discutir en una entrevista técnica.</p>
+      <div class="gh-grid">
+
+        <!-- FOOD SENSE -->
+        <div class="gh-card">
+          <div class="gh-header">
+            <a href="https://github.com/epinki07/food-sense" target="_blank" class="gh-repo-name">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+              food-sense
+            </a>
+            <span class="gh-date">2026 · Feb</span>
+          </div>
+          <p class="gh-desc" id="project-food-sense-desc">
+            Landing + backend del proyecto <strong>Food Sense</strong> para monitoreo de
+            refrigeradores en tiempo real. Incluye frontend, autenticación, endpoints
+            para ESP32, métricas y streaming. Es una buena muestra de trabajo entre
+            software, hardware y entrega en competencia.
+          </p>
+          <div class="gh-footer">
+            <span class="gh-lang"><span class="lang-dot lang-html"></span> JavaScript</span>
+            <span class="gh-lang">Node.js · IoT · ESP32</span>
+            <span class="gh-badge-extra">🥉 IFTP2026</span>
+          </div>
+        </div>
+
+        <!-- BACCARAT ANALYZER -->
+        <div class="gh-card">
+          <div class="gh-header">
+            <a href="https://github.com/epinki07/baccarat_analyzer" target="_blank" class="gh-repo-name">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+              baccarat_analyzer
+            </a>
+            <span class="gh-date">2026 · Ene</span>
+          </div>
+          <p class="gh-desc" id="project-baccarat-desc">
+            Aplicación analítica en <strong>Python + Streamlit</strong> para detectar
+            patrones, simular bankroll y explorar datos de juego. Incluye estructura
+            modular y tests, así que comunica bien pensamiento analítico y disciplina
+            técnica.
+          </p>
+          <div class="gh-footer">
+            <span class="gh-lang"><span class="lang-dot lang-python"></span> Python</span>
+            <span class="gh-lang">Streamlit · Analytics · CSV</span>
+          </div>
+        </div>
+
+        <!-- SQAD -->
+        <div class="gh-card">
+          <div class="gh-header">
+            <a href="https://github.com/epinki07/SQAD" target="_blank" class="gh-repo-name">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+              SQAD
+            </a>
+            <span class="gh-date">2026 · Feb</span>
+          </div>
+          <p class="gh-desc" id="project-sqad-desc">
+            Sistema de <strong>control de calidad</strong> para almacenes de alimentos en
+            <strong>Java</strong> con arquitectura por capas. Gestiona refrigerados, congelados
+            y secos; emite alertas por temperatura, humedad y caducidad. Lo desarrollé
+            por iniciativa propia como extensión técnica de IFTP.
+          </p>
+          <div class="gh-footer">
+            <span class="gh-lang"><span class="lang-dot lang-java"></span> Java</span>
+            <span class="gh-lang">POO · Capas · CSV</span>
+            <span class="gh-badge-extra">⚡ Extra IFTP2026</span>
+          </div>
+        </div>
+
+        <!-- CIFRADO CESAR -->
+        <div class="gh-card">
+          <div class="gh-header">
+            <a href="https://github.com/epinki07/cifrado-cesar" target="_blank" class="gh-repo-name">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+              cifrado-cesar
+            </a>
+            <span class="gh-date">2025 · Oct</span>
+          </div>
+          <p class="gh-desc" id="project-caesar-desc">
+            Herramienta CLI en <strong>Python</strong> para cifrar y descifrar texto con
+            soporte para ñ, fuerza bruta y variantes de alfabeto. Proyecto pequeño,
+            pero útil para mostrar fundamentos sólidos, manejo de lógica y atención al
+            detalle.
+          </p>
+          <div class="gh-footer">
+            <span class="gh-lang"><span class="lang-dot lang-python"></span> Python</span>
+            <span class="gh-lang">Criptografía · CLI · SO</span>
+          </div>
+        </div>
+
+        <!-- EJERCICIOS JAVA CLASE -->
+        <div class="gh-card">
+          <div class="gh-header">
+            <a href="https://github.com/epinki07/ejercicios-java" target="_blank" class="gh-repo-name">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+              ejercicios-java
+            </a>
+            <span class="gh-date">2025 · Sep</span>
+          </div>
+          <p class="gh-desc" id="project-java-exercises-desc">
+            Repositorio de fundamentos con <strong>21 ejercicios de Java</strong>. No es
+            mi proyecto más complejo, pero sí evidencia una base consistente en lógica,
+            control de flujo y orientación a objetos.
+          </p>
+          <div class="gh-footer">
+            <span class="gh-lang"><span class="lang-dot lang-java"></span> Java</span>
+            <span class="gh-lang">POO · Fundamentos</span>
+          </div>
+        </div>
+
+        <!-- STARKNET CONTRACTS -->
+        <div class="gh-card">
+          <div class="gh-header">
+            <a href="https://github.com/epinki07/starknet-contracts" target="_blank" class="gh-repo-name">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+              starknet-contracts
+            </a>
+            <span class="gh-date">2025 · Nov</span>
+          </div>
+          <p class="gh-desc" id="project-starknet-desc">
+            Contratos inteligentes escritos en <strong>Cairo</strong> para la red
+            <strong>StarkNet (Layer 2)</strong>. Incluye <em>DigitalVault</em> — almacén
+            de secretos por dirección on-chain — y <em>MessageBoard</em> — tablero de
+            mensajes descentralizado con eventos indexados. Muestra aprendizaje acelerado
+            en blockchain, lógica on-chain, eventos y almacenamiento.
+          </p>
+          <div class="gh-footer">
+            <span class="gh-lang"><span class="lang-dot" style="background:#ff6b35"></span> Cairo</span>
+            <span class="gh-lang">StarkNet · Layer 2 · DApps</span>
+            <span class="gh-badge-extra">🥇 Buildathon</span>
+          </div>
+        </div>
+
+        <!-- PATRON STRATEGY -->
+        <div class="gh-card">
+          <div class="gh-header">
+            <a href="https://github.com/epinki07/patron-strategy-pedidos" target="_blank" class="gh-repo-name">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+              patron-strategy-pedidos
+            </a>
+            <span class="gh-date">2025 · Dic</span>
+          </div>
+          <p class="gh-desc" id="project-strategy-desc">
+            Sistema de pedidos en <strong>Java</strong> que implementa el
+            <strong>Patrón Strategy</strong> para gestionar distintos tipos de descuento:
+            porcentaje, fijo, 2x1 y sin descuento. Buen ejemplo de diseño orientado a
+            objetos, persistencia en CSV y separación de responsabilidades.
+          </p>
+          <div class="gh-footer">
+            <span class="gh-lang"><span class="lang-dot lang-java"></span> Java</span>
+            <span class="gh-lang">Patrón Strategy · CSV · POO</span>
+          </div>
+        </div>
+
+        <!-- JAVA UNIDAD 1 -->
+        <div class="gh-card">
+          <div class="gh-header">
+            <a href="https://github.com/epinki07/java-unidad1" target="_blank" class="gh-repo-name">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+              java-unidad1
+            </a>
+            <span class="gh-date">2025 · Sep</span>
+          </div>
+          <p class="gh-desc" id="project-java-unit-desc">
+            Colección de ejercicios iniciales de Java que documenta mi curva de aprendizaje
+            desde los fundamentos. Lo mantengo como evidencia de disciplina y progreso real.
+          </p>
+          <div class="gh-footer">
+            <span class="gh-lang"><span class="lang-dot lang-java"></span> Java</span>
+            <span class="gh-lang">Fundamentos · Estructuras · Lógica</span>
+          </div>
+        </div>
+
+        <!-- JAVA UDEMY -->
+        <div class="gh-card">
+          <div class="gh-header">
+            <a href="https://github.com/epinki07/java-udemy" target="_blank" class="gh-repo-name">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+              java-udemy
+            </a>
+            <span class="gh-date">2026 · Ene</span>
+          </div>
+          <p class="gh-desc" id="project-java-udemy-desc">
+            Repositorio de práctica intensiva con más de <strong>150 ejercicios de Java</strong>,
+            POO, ficheros, regex, Swing, JavaFX y MySQL. Más que un producto final,
+            sirve como respaldo de constancia y volumen de práctica.
+          </p>
+          <div class="gh-footer">
+            <span class="gh-lang"><span class="lang-dot lang-java"></span> Java</span>
+            <span class="gh-lang">Udemy · 9 secciones · MySQL</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="container">
+      <div class="contact-wrapper">
+        <span class="section-tag" id="contact-tag">// contacto</span>
+        <h2 class="section-title" id="contact-title">¿Platicamos <span>?</span></h2>
+        <p class="section-sub" id="contact-sub" style="margin-top:.5rem;">
+          Si estás buscando un perfil junior con iniciativa, aprendizaje rápido y
+          evidencia pública de trabajo, escríbeme. Me interesan prácticas, colaboración
+          en proyectos y oportunidades de entrada en software.
+        </p>
+        <div class="contact-cards">
+          <a href="mailto:dramirezmagana@gmail.com" class="contact-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            dramirezmagana@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/diego-ramirez-maga%C3%B1a-b15022298/" target="_blank" class="contact-card">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/epinki07" target="_blank" class="contact-card">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL CONSTANCIA -->
+  <div class="modal-overlay" id="modal-constancia" role="dialog" aria-modal="true" aria-label="Constancia Starknet Buildathon">
+    <div class="modal-inner">
+      <button class="modal-close" type="button" aria-label="Cerrar imagen">✕</button>
+      <img src="buildathon-constancia.png" alt="Constancia oficial del Starknet Buildathon 2025 · 1er Lugar · Diego Ramirez Magaña"/>
+    </div>
+  </div>
+
+  <!-- MODAL FORMACION -->
+  <div class="modal-overlay" id="modal-education" role="dialog" aria-modal="true" aria-label="Mapa curricular completo">
+    <div class="modal-inner modal-inner--wide">
+      <button class="modal-close" type="button" aria-label="Cerrar imagen">✕</button>
+      <img id="modal-education-image" src="assets/formacion/mapa-curricular-aclarado.svg" alt="Mapa curricular aclarado de Ingeniería en Software y Negocios Digitales"/>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p id="footer-text">Hecho con intención por <span>Diego Ramirez Magaña</span> · 2026 · Tecnológico del Software</p>
+  </footer>
+
+  <!-- CURSOR LIGHT (se oculta por CSS en móvil / reduced-motion) -->
+  <div id="cursor-light" aria-hidden="true"></div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
