@@ -2,6 +2,7 @@
   const { translations } = window.PortfolioI18n;
 
   const typingEl = document.getElementById('typing-label');
+  const themeToggle = document.getElementById('theme-toggle');
   const langToggle = document.getElementById('lang-toggle');
   const hamburger = document.getElementById('hamburger');
   const navList = document.getElementById('nav-links');
@@ -11,6 +12,7 @@
   const metaDescription = document.getElementById('meta-description');
   const metaOgTitle = document.getElementById('meta-og-title');
   const metaOgDescription = document.getElementById('meta-og-description');
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
   const pageTitle = document.getElementById('page-title');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const hoverNone = window.matchMedia('(hover: none)');
@@ -18,6 +20,7 @@
   let typingTick;
   let typingRunId = 0;
   let currentLang = localStorage.getItem('portfolio-lang') || 'es';
+  let currentTheme = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
 
   function setInnerHtml(id, value) {
     const element = document.getElementById(id);
@@ -51,6 +54,29 @@
     modalCloseButtons.forEach(button => button.setAttribute('aria-label', toggle.closeImage));
   }
 
+  function updateThemeToggle(lang) {
+    if (!themeToggle) return;
+    const toggle = translations[lang].toggle;
+    const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+    const icon = nextTheme === 'light' ? '☀' : '☾';
+    const label = nextTheme === 'light' ? toggle.themeLight : toggle.themeDark;
+    const aria = nextTheme === 'light' ? toggle.themeToLight : toggle.themeToDark;
+
+    themeToggle.innerHTML = `<span class="theme-icon" aria-hidden="true">${icon}</span><span class="theme-label">${label}</span>`;
+    themeToggle.setAttribute('aria-label', aria);
+    themeToggle.setAttribute('title', aria);
+  }
+
+  function applyTheme(theme) {
+    currentTheme = theme === 'light' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = currentTheme;
+    localStorage.setItem('portfolio-theme', currentTheme);
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute('content', currentTheme === 'light' ? '#f7fbff' : '#0a0a0a');
+    }
+    updateThemeToggle(currentLang);
+  }
+
   function applyTranslations(lang) {
     const translation = translations[lang];
     currentLang = lang;
@@ -63,6 +89,7 @@
     metaOgDescription.setAttribute('content', translation.meta.ogDescription);
     Object.entries(translation.content).forEach(([id, value]) => setInnerHtml(id, value));
     updateLanguageToggle(lang);
+    updateThemeToggle(lang);
     startTyping(translation.typingLabel);
   }
 
@@ -76,6 +103,11 @@
   langToggle.addEventListener('click', () => {
     applyTranslations(currentLang === 'es' ? 'en' : 'es');
   });
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      applyTheme(currentTheme === 'light' ? 'dark' : 'light');
+    });
+  }
 
   /* ── MODAL DELEGATION (sin onclick inline) ── */
   const certificateModal = document.getElementById('modal-constancia');
@@ -238,4 +270,5 @@
   });
 
   applyTranslations(currentLang);
+  applyTheme(currentTheme);
 })();

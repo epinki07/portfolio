@@ -15,6 +15,16 @@
   <meta name="description"        id="meta-description" content="Portafolio de Diego Ramirez Magaña. Estudiante de software con proyectos en Java, Python, IoT y StarkNet, abierto a prácticas y oportunidades junior."/>
   <meta name="theme-color"        content="#3b82f6"/>
 
+  <script>
+    (function () {
+      var storedTheme = localStorage.getItem('portfolio-theme');
+      var theme = storedTheme === 'light' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = theme;
+      var themeMeta = document.querySelector('meta[name="theme-color"]');
+      if (themeMeta) themeMeta.setAttribute('content', theme === 'light' ? '#f7fbff' : '#0a0a0a');
+    })();
+  </script>
+
   <!-- Favicon SVG -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%233b82f6'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,sans-serif' font-weight='800' font-size='14' fill='white'>DR</text></svg>"/>
   <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='36' fill='%233b82f6'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,sans-serif' font-weight='800' font-size='78' fill='white'>DR</text></svg>"/>
@@ -77,6 +87,9 @@
       <li><a href="#contacto" id="nav-contact">Contacto</a></li>
     </ul>
     <div class="nav-right">
+      <button class="theme-btn" id="theme-toggle" aria-label="Cambiar a modo claro">
+        <span class="theme-icon" aria-hidden="true">☀</span><span class="theme-label">Claro</span>
+      </button>
       <button class="lang-btn" id="lang-toggle" aria-label="Cambiar a inglés">
         <span class="lang-flag">🇺🇸</span><span class="lang-label">EN</span>
       </button>
