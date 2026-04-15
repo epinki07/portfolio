@@ -6,9 +6,6 @@
   const hamburger = document.getElementById('hamburger');
   const navList = document.getElementById('nav-links');
   const progressBar = document.getElementById('scroll-progress');
-  const educationImage = document.getElementById('education-image');
-  const educationModalImage = document.getElementById('modal-education-image');
-  const educationZoom = document.getElementById('education-zoom');
   const modalCloseButtons = document.querySelectorAll('.modal-close');
   const certificateTrigger = document.getElementById('certificate-trigger');
   const metaDescription = document.getElementById('meta-description');
@@ -65,10 +62,6 @@
     metaOgTitle.setAttribute('content', translation.meta.ogTitle);
     metaOgDescription.setAttribute('content', translation.meta.ogDescription);
     Object.entries(translation.content).forEach(([id, value]) => setInnerHtml(id, value));
-    educationImage.src = translation.educationImage.src;
-    educationImage.alt = translation.educationImage.alt;
-    educationModalImage.src = translation.educationImage.src;
-    educationModalImage.alt = translation.educationImage.alt;
     updateLanguageToggle(lang);
     startTyping(translation.typingLabel);
   }
@@ -79,8 +72,6 @@
 
   /* ── MODAL DELEGATION (sin onclick inline) ── */
   const certificateModal = document.getElementById('modal-constancia');
-  const educationModal = document.getElementById('modal-education');
-
   function openModal(modal) { modal.classList.add('active'); }
   function closeModal(modal) { modal.classList.remove('active'); }
 
@@ -93,8 +84,6 @@
       openModal(certificateModal);
     }
   });
-
-  educationZoom.addEventListener('click', () => openModal(educationModal));
 
   document.querySelectorAll('.modal-overlay').forEach(overlay => {
     overlay.addEventListener('click', event => {
@@ -176,7 +165,6 @@
     ...document.querySelectorAll('.skill-card'),
     ...document.querySelectorAll('.about-card'),
     ...document.querySelectorAll('.about-body'),
-    ...document.querySelectorAll('.education-showcase'),
   ];
   revealEls.forEach(element => element.classList.add('reveal'));
   const revealObs = new IntersectionObserver(entries => {
