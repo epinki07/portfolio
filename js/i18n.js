@@ -49,7 +49,7 @@ const translations = {
       'looking-for-location': 'Presencial en Mérida o Híbrido',
       'looking-for-stack': 'Backend · Java · Python',
       'looking-for-teams': 'Equipos que aprenden rápido',
-      'looking-for-type': 'Producto real · No solo mantenimiento',
+      'looking-for-type': 'Abierto a cualquier oportunidad de entrada',
       'skills-tag': '// habilidades',
       'skills-title': 'Con qué puedo <span>aportar</span>',
       'skills-category-dev': '💻 Programación &amp; Desarrollo',
