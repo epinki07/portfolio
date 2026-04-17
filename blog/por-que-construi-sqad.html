@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Por qué construí SQAD — Diego Ramirez Magaña</title>
+  <meta name="description" content="Después de IFTP2026 ya tenía Food Sense. El proyecto estaba listo y entregado. Pero algo del problema no me dejaba cerrar la laptop."/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%233b82f6'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,sans-serif' font-weight='800' font-size='14' fill='white'>DR</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <style>
+    .blog-wrap { max-width: 680px; margin: 0 auto; padding: 6rem 1.5rem 5rem; }
+    .blog-back { display: inline-flex; align-items: center; gap: .4rem; font-size: .82rem; color: var(--muted); text-decoration: none; margin-bottom: 2.5rem; }
+    .blog-back:hover { color: var(--accent); }
+    .blog-tag { font-family: 'Fira Code', monospace; font-size: .72rem; color: var(--accent); background: var(--accent-soft-bg); border: 1px solid var(--accent-soft-bd); border-radius: 20px; padding: .2rem .65rem; }
+    .blog-title { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; line-height: 1.25; margin: 1rem 0 .5rem; color: var(--text); }
+    .blog-meta { font-size: .78rem; color: var(--muted); margin-bottom: 2.5rem; }
+    .blog-body { font-size: 1rem; line-height: 1.85; color: var(--text); }
+    .blog-body p { margin-bottom: 1.4rem; }
+    .blog-body h2 { font-size: 1.15rem; font-weight: 600; margin: 2.2rem 0 .8rem; color: var(--text); }
+    .blog-body code { font-family: 'Fira Code', monospace; font-size: .85em; background: var(--card2); padding: .1em .4em; border-radius: 4px; color: var(--accent2); }
+    .blog-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    .blog-footer-nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .blog-footer-nav a { font-size: .82rem; color: var(--accent); text-decoration: none; }
+    .blog-footer-nav a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<div class="blog-wrap">
+  <a href="../index.html" class="blog-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    Volver al portafolio
+  </a>
+
+  <span class="blog-tag">Java · Iniciativa</span>
+  <h1 class="blog-title">Por qué construí SQAD cuando nadie me lo pidió</h1>
+  <p class="blog-meta">Marzo 2026 · 4 min de lectura</p>
+
+  <div class="blog-body">
+
+    <p>
+      Food Sense estaba terminado. El proyecto había obtenido tercer lugar en IFTP2026, la competencia había cerrado, y técnicamente ya podía pasar a otra cosa. Eso era lo que tenía sentido hacer.
+    </p>
+
+    <p>
+      Pero mientras trabajaba en Food Sense había un problema que me quedó dando vueltas. El sistema monitoreaba si los refrigeradores estaban fallando, pero no había nada que gestionara qué pasaba con el inventario de alimentos cuando fallaban. No en el sentido de la alerta, sino en el sentido de: ¿qué producto está a punto de caducar? ¿qué pasa con los congelados cuando sube la temperatura dos grados? Ese era un problema diferente, más parecido a gestión interna que a monitoreo IoT.
+    </p>
+
+    <h2>El problema que quería resolver</h2>
+
+    <p>
+      En cualquier almacén de alimentos hay tres tipos de producto que necesitan condiciones distintas: refrigerados, congelados y secos. Cada uno tiene rangos tolerables de temperatura y humedad, y cada uno tiene fechas de caducidad que no pueden ignorarse. Un sistema que monitoree en tiempo real los sensores es útil, pero sin un sistema que diga qué hacer con esa información, solo es ruido.
+    </p>
+
+    <p>
+      SQAD era esa capa que faltaba. No el monitoreo de hardware sino la gestión del inventario: saber qué hay, en qué estado está, y cuándo hay que actuar.
+    </p>
+
+    <h2>Por qué Java y por qué arquitectura por capas</h2>
+
+    <p>
+      En ese momento ya tenía claro que Java era el lenguaje donde quería consolidarme. Construir algo que no fuera un ejercicio de clase sino un sistema real, aunque pequeño, me parecía más útil que resolver otro problema de algoritmos.
+    </p>
+
+    <p>
+      Elegí arquitectura por capas porque quería que el proyecto se pareciera a cómo funciona el software en un contexto profesional. Capa de presentación, capa de servicio, capa de repositorio. No porque SQAD lo necesite a este tamaño, sino porque quería practicar esa separación. En proyectos más grandes eso importa mucho y prefería equivocarme en un proyecto propio que en uno de trabajo.
+    </p>
+
+    <p>
+      La persistencia en CSV fue una decisión pragmática. No quería introducir una base de datos si el foco era la arquitectura y la lógica de negocio. CSV funciona, se puede abrir en cualquier editor, y el código de lectura/escritura es algo que también necesitaba practicar en Java.
+    </p>
+
+    <h2>Lo que me dejó</h2>
+
+    <p>
+      Terminé SQAD en unas dos semanas trabajando a ratos. No es un sistema grande: tiene cinco o seis clases principales y el CSV. Pero el proceso de diseñarlo solo, sin especificaciones ni un profesor que dijera qué hacer, fue lo más valioso.
+    </p>
+
+    <p>
+      Hay decisiones que tomé que hoy haría diferente. El manejo de alertas está un poco acoplado al servicio cuando debería ser más independiente. La lectura del CSV tiene código que se repite y podría estar en un helper. Lo sé porque lo revisé después de terminar el curso de Udemy y vi esas partes con más claridad.
+    </p>
+
+    <p>
+      Pero ese es exactamente el punto. Construir algo te hace ver cosas que no ves cuando solo lees o haces ejercicios de laboratorio. SQAD existe porque quería ver hasta dónde llegaba solo, y la respuesta fue suficientemente lejos como para aprender algo útil.
+    </p>
+
+  </div>
+
+  <hr class="blog-divider"/>
+  <div class="blog-footer-nav">
+    <a href="buildathon-48-horas.html">← El buildathon</a>
+    <a href="food-sense-iftp.html">Siguiente: IFTP y Food Sense →</a>
+  </div>
+</div>
+<script>
+  (function () {
+    var theme = localStorage.getItem('portfolio-theme') === 'light' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+</body>
+</html>

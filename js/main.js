@@ -93,6 +93,12 @@
     updateThemeToggle(currentLang);
   }
 
+  function updatePlaceholders(lang) {
+    document.querySelectorAll(`[data-ph-${lang}]`).forEach(el => {
+      el.placeholder = el.getAttribute(`data-ph-${lang}`);
+    });
+  }
+
   function applyTranslations(lang) {
     const translation = translations[lang];
     currentLang = lang;
@@ -106,6 +112,7 @@
     Object.entries(translation.content).forEach(([id, value]) => setInnerHtml(id, value));
     updateLanguageToggle(lang);
     updateThemeToggle(lang);
+    updatePlaceholders(lang);
     startTyping(translation.typingLabel);
   }
 
@@ -138,6 +145,21 @@
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
         openModal(certificateModal);
+      }
+    });
+  }
+
+  const udemyCertTrigger = document.getElementById('udemy-cert-trigger');
+  const udemyCertModal = document.getElementById('modal-udemy-pdf');
+  if (udemyCertTrigger && udemyCertModal) {
+    udemyCertTrigger.setAttribute('role', 'button');
+    udemyCertTrigger.setAttribute('tabindex', '0');
+    udemyCertTrigger.style.cursor = 'pointer';
+    udemyCertTrigger.addEventListener('click', () => openModal(udemyCertModal));
+    udemyCertTrigger.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(udemyCertModal);
       }
     });
   }
@@ -284,6 +306,47 @@
 
     countObs.observe(element);
   });
+
+  /* ── CONTACT FORM ── */
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORMSPREE_ID';
+  const contactForm = document.getElementById('contact-form');
+  const formSuccess = document.getElementById('form-success');
+  const formError = document.getElementById('form-error');
+  const formSubmitBtn = document.getElementById('form-submit-btn');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+      const originalLabel = formSubmitBtn.textContent;
+      formSubmitBtn.disabled = true;
+      formSubmitBtn.textContent = currentLang === 'es' ? 'Enviando…' : 'Sending…';
+      formSuccess.hidden = true;
+      formError.hidden = true;
+
+      try {
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(contactForm),
+        });
+        if (response.ok) {
+          formSuccess.hidden = false;
+          contactForm.reset();
+        } else {
+          formError.hidden = false;
+        }
+      } catch {
+        formError.hidden = false;
+      } finally {
+        formSubmitBtn.disabled = false;
+        formSubmitBtn.textContent = originalLabel;
+      }
+    });
+  }
 
   applyTranslations(currentLang);
   applyTheme(currentTheme);

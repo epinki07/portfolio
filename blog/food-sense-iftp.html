@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Food Sense e IFTP2026 — Diego Ramirez Magaña</title>
+  <meta name="description" content="Un hackathon universitario internacional, sensores que no llegaban, un backend terminado a las 3am, y lo que aprendí sobre trabajar bajo presión real."/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%233b82f6'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,sans-serif' font-weight='800' font-size='14' fill='white'>DR</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <style>
+    .blog-wrap { max-width: 680px; margin: 0 auto; padding: 6rem 1.5rem 5rem; }
+    .blog-back { display: inline-flex; align-items: center; gap: .4rem; font-size: .82rem; color: var(--muted); text-decoration: none; margin-bottom: 2.5rem; }
+    .blog-back:hover { color: var(--accent); }
+    .blog-tag { font-family: 'Fira Code', monospace; font-size: .72rem; color: var(--accent); background: var(--accent-soft-bg); border: 1px solid var(--accent-soft-bd); border-radius: 20px; padding: .2rem .65rem; }
+    .blog-title { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; line-height: 1.25; margin: 1rem 0 .5rem; color: var(--text); }
+    .blog-meta { font-size: .78rem; color: var(--muted); margin-bottom: 2.5rem; }
+    .blog-body { font-size: 1rem; line-height: 1.85; color: var(--text); }
+    .blog-body p { margin-bottom: 1.4rem; }
+    .blog-body h2 { font-size: 1.15rem; font-weight: 600; margin: 2.2rem 0 .8rem; color: var(--text); }
+    .blog-body code { font-family: 'Fira Code', monospace; font-size: .85em; background: var(--card2); padding: .1em .4em; border-radius: 4px; color: var(--accent2); }
+    .blog-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    .blog-footer-nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .blog-footer-nav a { font-size: .82rem; color: var(--accent); text-decoration: none; }
+    .blog-footer-nav a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<div class="blog-wrap">
+  <a href="../index.html" class="blog-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    Volver al portafolio
+  </a>
+
+  <span class="blog-tag">IoT · Competencia</span>
+  <h1 class="blog-title">Lo que nadie cuenta de participar en Invent for the Planet</h1>
+  <p class="blog-meta">Febrero 2026 · 5 min de lectura</p>
+
+  <div class="blog-body">
+
+    <p>
+      Invent for the Planet es una competencia universitaria internacional que organiza la Texas A&amp;M University. Tienes 48 horas para definir un problema, diseñar una solución y presentarla. Los equipos son mixtos: puedes tener alguien de ingeniería, alguien de negocios, alguien de diseño. El formato obliga a que la solución sea multidisciplinar.
+    </p>
+
+    <p>
+      Nuestro equipo eligió el problema del desperdicio de alimentos por fallos en la cadena de frío. Decidimos construir Food Sense: un sistema IoT con cámaras, sensores de temperatura y humedad, y un dashboard web que permite monitorear múltiples refrigeradores en tiempo real.
+    </p>
+
+    <h2>Lo que nadie te dice al principio</h2>
+
+    <p>
+      El hardware no llega cuando lo esperas. Teníamos planeado usar un ESP32 con sensores DHT para la temperatura y una cámara para detección visual. En la práctica, el sensor llegó tarde y parte del tiempo del primer día lo usamos trabajando con datos simulados para poder avanzar en el backend mientras esperábamos el hardware real.
+    </p>
+
+    <p>
+      Eso cambia completamente cómo diseñas. Cuando trabajas con datos simulados primero, el backend tiene que ser flexible: los endpoints tienen que funcionar tanto con datos de prueba como con datos reales del sensor. Eso me obligó a pensar en la API de una forma más cuidadosa que si hubiera empezado con el hardware desde el principio.
+    </p>
+
+    <h2>El backend a las 3am</h2>
+
+    <p>
+      La parte del servidor la hice en Node.js con Express. No fue una decisión profundamente razonada: era lo que podía montar rápido con autenticación, rutas y endpoints para el ESP32. El dashboard corría en el mismo servidor. JWT para la autenticación porque era lo más directo.
+    </p>
+
+    <p>
+      Hubo un punto, alrededor de las tres de la madrugada del segundo día, donde el streaming de datos del sensor al dashboard se cortaba de forma intermitente. Tardé más de lo que quiero admitir en darme cuenta de que el problema era un timeout en la conexión que no estaba manejando correctamente. Cuando lo encontré era una línea de configuración. Eso pasa.
+    </p>
+
+    <p>
+      Lo que sí funcionó bien desde el principio fue la estructura del proyecto. Separamos el backend del frontend del dashboard desde el inicio, con rutas claras y sin mezclar responsabilidades. En un hackathon eso importa porque el código que escribes a las 3am tiene que ser legible para ti mismo a las 9am cuando te toca presentar.
+    </p>
+
+    <h2>La presentación y el tercer lugar</h2>
+
+    <p>
+      Presentamos al mediodía del segundo día. Quince minutos: cinco de demo en vivo, diez de preguntas. El jurado preguntó sobre escalabilidad, sobre cómo manejaríamos múltiples unidades de refrigeración en un mismo establecimiento, y sobre el costo del hardware por unidad.
+    </p>
+
+    <p>
+      Obtuvimos el tercer lugar. No fue el primer lugar, y eso está bien. El primer y segundo lugar tenían propuestas más completas en el lado del hardware, con prototipos físicos más terminados. Nosotros teníamos más desarrollo en el software. Cada equipo gana con lo que tiene.
+    </p>
+
+    <h2>Lo que me llevé</h2>
+
+    <p>
+      Aprendí que la presión de tiempo cambia cómo priorizas. En clase puedes refactorizar indefinidamente. En un hackathon aprendes rápido qué es lo mínimo que tiene que funcionar y qué puede quedar en deuda técnica. Esa distinción, saber cuándo es suficiente, no se aprende en un ejercicio de laboratorio.
+    </p>
+
+    <p>
+      También aprendí que integrar hardware y software no es solo conectar cosas. Hay timing, hay protocolos, hay formatos de datos que no son los que esperabas. Y hay que tomar decisiones sobre cómo manejar cuando el hardware falla, porque siempre hay alguna probabilidad de que falle.
+    </p>
+
+    <p>
+      El repositorio de Food Sense tiene el código del backend y la landing page. No tiene el código del ESP32 porque ese quedó en el hardware físico. Pero el servidor, los endpoints y el dashboard están ahí para quien quiera revisarlos.
+    </p>
+
+  </div>
+
+  <hr class="blog-divider"/>
+  <div class="blog-footer-nav">
+    <a href="por-que-construi-sqad.html">← SQAD</a>
+    <a href="../index.html">Volver al portafolio →</a>
+  </div>
+</div>
+<script>
+  (function () {
+    var theme = localStorage.getItem('portfolio-theme') === 'light' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+</body>
+</html>

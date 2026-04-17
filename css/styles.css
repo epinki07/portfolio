@@ -44,7 +44,7 @@
   --modal-close-hover: #333;
   --contact-bg:        #000;
   --footer-bg:         #000;
-  --footer-text:       var(--border2);
+  --footer-text:       var(--muted);
   --thumb-dark-1:      #111;
   --thumb-dark-2:      #1a1a1a;
   --profile-object-position: center 24%;
@@ -97,7 +97,7 @@ html[data-theme="light"] {
   --modal-close-hover: #dbe7f3;
   --contact-bg:        #eef4fa;
   --footer-bg:         #eef4fa;
-  --footer-text:       #64748b;
+  --footer-text:       var(--muted);
   --thumb-dark-1:      #d9e4ee;
   --thumb-dark-2:      #c6d4e2;
 }
@@ -221,6 +221,54 @@ nav {
   max-width: 460px; line-height: 1.8; margin-bottom: 2.25rem;
 }
 .hero-btns { display: flex; gap: .85rem; flex-wrap: wrap; }
+
+/* ── QUÉ BUSCO ── */
+.looking-for {
+  margin: 1.5rem 0 0;
+  background: linear-gradient(135deg, var(--accent-soft-bg2), var(--accent2-soft-bg));
+  border: 1px solid var(--accent-soft-bd);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+}
+.looking-for-label {
+  font-family: 'Fira Code', monospace;
+  font-size: .7rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: .75rem;
+  display: block;
+}
+.looking-for-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: .65rem;
+}
+.looking-for-item {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .82rem;
+  color: var(--text);
+  font-weight: 500;
+}
+.looking-for-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+@media (max-width: 560px) {
+  .looking-for-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 420px) {
+  .looking-for-grid {
+    grid-template-columns: 1fr;
+  }
+  .looking-for-item {
+    font-size: .78rem;
+  }
+}
 .btn {
   padding: .7rem 1.6rem; border-radius: 8px;
   font-weight: 600; font-size: .875rem;
@@ -275,7 +323,7 @@ nav {
 .scroll-hint {
   position: absolute; bottom: 2rem; left: 50%;
   transform: translateX(-50%);
-  color: var(--border2); font-size: .72rem;
+  color: var(--muted); font-size: .72rem;
   display: flex; flex-direction: column; align-items: center; gap: .3rem;
   z-index: 1;
 }
@@ -414,7 +462,6 @@ section {
 .skill-meta {
   font-size: .62rem;
   color: var(--muted);
-  opacity: .75;
   margin-top: .2rem;
   font-family: 'Fira Code', monospace;
 }
@@ -532,7 +579,6 @@ section {
   font-family: 'Fira Code', monospace;
   font-size: .68rem;
   color: var(--muted);
-  opacity: .8;
   letter-spacing: .02em;
 }
 .gh-desc {
@@ -613,6 +659,77 @@ section {
 }
 .contact-card:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
 .contact-card svg { width: 18px; height: 18px; color: var(--accent); flex-shrink: 0; }
+
+/* ── CONTACT FORM ── */
+.contact-form {
+  text-align: left;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.form-group label {
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+.form-group input,
+.form-group textarea {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: .9rem;
+  padding: .7rem 1rem;
+  transition: border-color .2s, box-shadow .2s;
+  width: 100%;
+  resize: none;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(59,130,246,.15);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--muted);
+  opacity: .6;
+}
+.form-group textarea { min-height: 120px; }
+.form-submit { align-self: flex-start; margin-top: .2rem; }
+.form-submit:disabled { opacity: .6; cursor: not-allowed; }
+.form-status {
+  font-size: .875rem;
+  padding: .7rem 1rem;
+  border-radius: 8px;
+  margin-top: .1rem;
+}
+.form-status--success {
+  background: rgba(34,197,94,.1);
+  color: #22c55e;
+  border: 1px solid rgba(34,197,94,.22);
+}
+.form-status--error {
+  background: rgba(239,68,68,.08);
+  color: #ef4444;
+  border: 1px solid rgba(239,68,68,.2);
+}
+.contact-alt { margin-top: 2rem; }
+.contact-alt .contact-cards { margin-top: .75rem; }
+.contact-alt-label {
+  font-size: .8rem;
+  color: var(--muted);
+  margin-bottom: .25rem;
+}
 
 /* ── FOOTER ── */
 footer {
@@ -1087,6 +1204,89 @@ footer span { color: var(--accent); }
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* ── MODAL PDF ── */
+.modal-inner--pdf {
+  width: min(860px, 95vw);
+  height: min(620px, 90vh);
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 2rem 2rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+.modal-inner--pdf iframe {
+  flex: 1;
+  min-height: 0;
+}
+.udemy-cert-preview {
+  width: 48px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: var(--accent-soft-bg);
+  flex-shrink: 0;
+}
+
+/* ── NOTAS SECTION ── */
+#notas { padding: var(--section-padding); }
+.notas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.nota-card {
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem 1.4rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+.nota-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(59,130,246,.12);
+}
+.nota-tag {
+  font-size: .7rem;
+  font-family: 'Fira Code', monospace;
+  color: var(--accent);
+  background: var(--accent-soft-bg);
+  border: 1px solid var(--accent-soft-bd);
+  border-radius: 20px;
+  padding: .2rem .65rem;
+  width: fit-content;
+}
+.nota-card h3 {
+  font-size: .95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text);
+  margin: 0;
+}
+.nota-card p {
+  font-size: .82rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+.nota-read {
+  font-size: .78rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-top: auto;
+}
+@media (max-width: 768px) {
+  .notas-grid { grid-template-columns: 1fr; }
 }
 
 /* ── PRINT (CV-friendly) ── */

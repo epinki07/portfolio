@@ -10,9 +10,9 @@
   <!-- Open Graph / LinkedIn preview -->
   <meta property="og:type"        content="website"/>
   <meta property="og:title"       id="meta-og-title" content="Diego Ramirez Magaña | Software, backend e innovación aplicada"/>
-  <meta property="og:description" id="meta-og-description" content="Estudiante de software con proyectos en Java, Python, IoT y StarkNet. Dos premios en competencias y enfoque en prácticas y oportunidades junior."/>
+  <meta property="og:description" id="meta-og-description" content="Estudiante de software con proyectos en Java, Spring Boot, Python, IoT y StarkNet. Dos premios en competencias. Busco prácticas en backend, REST APIs, MySQL. Abierto a roles junior."/>
   <meta property="og:image"       content="buildathon-constancia.png"/>
-  <meta name="description"        id="meta-description" content="Portafolio de Diego Ramirez Magaña. Estudiante de software con proyectos en Java, Python, IoT y StarkNet, abierto a prácticas y oportunidades junior."/>
+  <meta name="description"        id="meta-description" content="Portafolio de Diego Ramirez Magaña. Estudiante de software con proyectos en Java, Spring Boot, Python, REST APIs, MySQL, IoT. 2 premios en competencias. Abierto a prácticas y oportunidades junior en backend."/>
   <meta name="theme-color"        content="#3b82f6"/>
 
   <script>
@@ -58,6 +58,16 @@
       "1er Lugar — StarkNet Buildathon 2025 (Proyecto Rent Chain)",
       "3er Lugar — Invent for the Planet 2026 (IFTP2026)"
     ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Aprende Java con 100 ejercicios prácticos (Incluye JavaFX)",
+        "url": "https://ude.my/UC-e1883c64-c1e4-4f4a-b06f-751a5457dcdd",
+        "credentialCategory": "Certificate",
+        "recognizedBy": { "@type": "Organization", "name": "Udemy" },
+        "dateCreated": "2026-04-17"
+      }
+    ],
     "knowsAbout": [
       "Java", "Python", "HTML", "POO",
       "StarkNet", "Cairo", "Smart Contracts", "Blockchain",
@@ -73,6 +83,15 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/styles.css"/>
+
+  <!-- Google Analytics 4 — reemplaza G-XXXXXXXXXX con tu Measurement ID desde analytics.google.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
@@ -87,6 +106,7 @@
       <li><a href="#skills" id="nav-skills">Habilidades</a></li>
       <li><a href="#logros" id="nav-achievements">Logros</a></li>
       <li><a href="#portafolio" id="nav-projects">Proyectos</a></li>
+      <li><a href="#notas" id="nav-notes">Notas</a></li>
       <li><a href="#contacto" id="nav-contact">Contacto</a></li>
     </ul>
     <div class="nav-right">
@@ -117,6 +137,30 @@
           StarkNet. Ya tengo evidencia pública de trabajo y dos resultados competitivos
           que respaldan cómo aprendo y ejecuto.
         </p>
+
+        <!-- QUÉ BUSCO -->
+        <div class="looking-for">
+          <span class="looking-for-label">// lo que busco</span>
+          <div class="looking-for-grid">
+            <div class="looking-for-item">
+              <span class="looking-for-icon">📍</span>
+              <span id="looking-for-location">Presencial en Mérida o Híbrido</span>
+            </div>
+            <div class="looking-for-item">
+              <span class="looking-for-icon">💻</span>
+              <span id="looking-for-stack">Backend · Java · Python</span>
+            </div>
+            <div class="looking-for-item">
+              <span class="looking-for-icon">🚀</span>
+              <span id="looking-for-teams">Equipos que aprenden rápido</span>
+            </div>
+            <div class="looking-for-item">
+              <span class="looking-for-icon">📈</span>
+              <span id="looking-for-type">Producto real · No solo mantenimiento</span>
+            </div>
+          </div>
+        </div>
+
         <div class="hero-btns">
           <a href="#portafolio" class="btn btn-primary" id="hero-btn-achievements">Ver proyectos clave</a>
           <a href="#contacto" class="btn btn-ghost" id="hero-btn-contact">Contáctame</a>
@@ -396,6 +440,37 @@
           <span class="logro-badge badge-gold" id="achievement-buildathon-badge">🥇 1er Lugar</span>
         </div>
 
+
+        <div class="logro-card logro-card--expandable">
+          <div class="logro-icon thumb-blue" aria-hidden="true">📜</div>
+          <div class="logro-info">
+            <h3 id="achievement-udemy-java-title">Certificado Udemy — Aprende Java con 100 ejercicios prácticos (Incluye JavaFX)</h3>
+            <p id="achievement-udemy-java-desc">
+              Curso de 21 horas con más de 100 ejercicios prácticos que cubre fundamentos avanzados de Java, programación orientada a objetos, manejo de ficheros, Swing y JavaFX. Impartido por <strong>Disco Duro de Roer</strong> en Udemy. Completado el 17 de abril de 2026.
+            </p>
+            <div class="constancia-thumb" id="udemy-cert-trigger">
+              <div class="udemy-cert-preview" aria-hidden="true">
+                <svg width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+                  <rect width="32" height="40" rx="4" fill="var(--accent-soft-bg)"/>
+                  <rect x="6" y="8" width="20" height="2" rx="1" fill="var(--accent)"/>
+                  <rect x="6" y="13" width="14" height="1.5" rx="0.75" fill="var(--muted)"/>
+                  <rect x="6" y="17" width="16" height="1.5" rx="0.75" fill="var(--muted)"/>
+                  <rect x="6" y="21" width="12" height="1.5" rx="0.75" fill="var(--muted)"/>
+                  <rect x="6" y="28" width="20" height="4" rx="2" fill="var(--accent)" opacity="0.3"/>
+                </svg>
+              </div>
+              <div class="constancia-thumb-info">
+                <span class="constancia-thumb-name" id="udemy-cert-title">📄 Certificado oficial Udemy</span>
+                <span class="constancia-thumb-meta" id="udemy-cert-meta">Java 100 ejercicios · Clic para ver →</span>
+              </div>
+            </div>
+            <p style="margin-top:.5rem; font-size:.75rem; color:var(--muted);">
+              <a href="https://ude.my/UC-e1883c64-c1e4-4f4a-b06f-751a5457dcdd" target="_blank" rel="noopener noreferrer" id="achievement-udemy-java-link" style="color:var(--muted); text-decoration:underline;">Verificar en Udemy · UC-e1883c64</a>
+            </p>
+          </div>
+          <span class="logro-badge badge-green" id="achievement-udemy-java-badge">📜 Udemy · 21h</span>
+        </div>
+
       </div>
     </div>
   </section>
@@ -408,50 +483,7 @@
       <p class="section-sub" id="projects-sub">Estos repos no solo muestran stack: muestran iniciativa, criterio técnico y la forma en que convierto ideas en entregables. Son la mejor evidencia de cómo trabajo hoy y del tipo de conversación técnica que ya puedo sostener.</p>
       <div class="gh-grid">
 
-        <!-- FOOD SENSE -->
-        <div class="gh-card">
-          <div class="gh-header">
-            <a href="https://github.com/epinki07/food-sense" target="_blank" class="gh-repo-name">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
-              food-sense
-            </a>
-            <span class="gh-date">2026 · Feb</span>
-          </div>
-          <p class="gh-desc" id="project-food-sense-desc">
-            Landing + backend del proyecto <strong>Food Sense</strong> para monitoreo de
-            refrigeradores en tiempo real. Incluye frontend, autenticación, endpoints
-            para ESP32, métricas y streaming. Es una buena muestra de trabajo entre
-            software, hardware y entrega en competencia.
-          </p>
-          <div class="gh-footer">
-            <span class="gh-lang"><span class="lang-dot lang-html"></span> JavaScript</span>
-            <span class="gh-lang">Node.js · IoT · ESP32</span>
-            <span class="gh-badge-extra">🥉 IFTP2026</span>
-          </div>
-        </div>
-
-        <!-- BACCARAT ANALYZER -->
-        <div class="gh-card">
-          <div class="gh-header">
-            <a href="https://github.com/epinki07/baccarat_analyzer" target="_blank" class="gh-repo-name">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
-              baccarat_analyzer
-            </a>
-            <span class="gh-date">2026 · Ene</span>
-          </div>
-          <p class="gh-desc" id="project-baccarat-desc">
-            Aplicación analítica en <strong>Python + Streamlit</strong> para detectar
-            patrones, simular bankroll y explorar datos de juego. Incluye estructura
-            modular y tests, así que comunica bien pensamiento analítico y disciplina
-            técnica.
-          </p>
-          <div class="gh-footer">
-            <span class="gh-lang"><span class="lang-dot lang-python"></span> Python</span>
-            <span class="gh-lang">Streamlit · Analytics · CSV</span>
-          </div>
-        </div>
-
-        <!-- SQAD -->
+        <!-- SQAD - PROYECTO #1 (INICIATIVA PROPIA) -->
         <div class="gh-card">
           <div class="gh-header">
             <a href="https://github.com/epinki07/SQAD" target="_blank" class="gh-repo-name">
@@ -473,69 +505,29 @@
           </div>
         </div>
 
-        <!-- CIFRADO CESAR -->
+        <!-- FOOD SENSE - PROYECTO #2 (PREMIO IFTP) -->
         <div class="gh-card">
           <div class="gh-header">
-            <a href="https://github.com/epinki07/cifrado-cesar" target="_blank" class="gh-repo-name">
+            <a href="https://github.com/epinki07/food-sense" target="_blank" class="gh-repo-name">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
-              cifrado-cesar
+              food-sense
             </a>
-            <span class="gh-date">2025 · Oct</span>
+            <span class="gh-date">2026 · Feb</span>
           </div>
-          <p class="gh-desc" id="project-caesar-desc">
-            Herramienta CLI en <strong>Python</strong> para cifrar y descifrar texto con
-            soporte para ñ, fuerza bruta y variantes de alfabeto. Proyecto pequeño,
-            pero útil para mostrar fundamentos sólidos, manejo de lógica y atención al
-            detalle.
+          <p class="gh-desc" id="project-food-sense-desc">
+            Landing + backend del proyecto <strong>Food Sense</strong> para monitoreo de
+            refrigeradores en tiempo real. Incluye frontend, autenticación, endpoints
+            para ESP32, métricas y streaming. Es una buena muestra de trabajo entre
+            software, hardware y entrega en competencia.
           </p>
           <div class="gh-footer">
-            <span class="gh-lang"><span class="lang-dot lang-python"></span> Python</span>
-            <span class="gh-lang">Criptografía · CLI · SO</span>
+            <span class="gh-lang"><span class="lang-dot lang-html"></span> JavaScript</span>
+            <span class="gh-lang">Node.js · IoT · ESP32</span>
+            <span class="gh-badge-extra">🥉 IFTP2026</span>
           </div>
         </div>
 
-        <!-- EJERCICIOS JAVA CLASE -->
-        <div class="gh-card">
-          <div class="gh-header">
-            <a href="https://github.com/epinki07/ejercicios-java" target="_blank" class="gh-repo-name">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
-              ejercicios-java
-            </a>
-            <span class="gh-date">2025 · Sep</span>
-          </div>
-          <p class="gh-desc" id="project-java-exercises-desc">
-            Repositorio de fundamentos con <strong>21 ejercicios de Java</strong>. No es
-            mi proyecto más complejo, pero sí evidencia una base consistente en lógica,
-            control de flujo y orientación a objetos.
-          </p>
-          <div class="gh-footer">
-            <span class="gh-lang"><span class="lang-dot lang-java"></span> Java</span>
-            <span class="gh-lang">POO · Fundamentos</span>
-          </div>
-        </div>
-
-        <!-- COLAB DATA STRUCTURES -->
-        <div class="gh-card">
-          <div class="gh-header">
-            <a href="https://github.com/epinki07/python-data-structures-colab" target="_blank" class="gh-repo-name">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
-              python-data-structures-colab
-            </a>
-            <span class="gh-date">2026 · Abr</span>
-          </div>
-          <p class="gh-desc" id="project-colab-ds-desc">
-            Repositorio ordenado de ejercicios de <strong>Estructura de Datos</strong>
-            desarrollados originalmente en <strong>Google Colab con Python</strong>.
-            Reúne prácticas de búsquedas, listas enlazadas, grafos y análisis de
-            complejidad en una estructura más clara para consulta y revisión.
-          </p>
-          <div class="gh-footer">
-            <span class="gh-lang"><span class="lang-dot lang-python"></span> Python</span>
-            <span class="gh-lang">Google Colab · Estructuras de Datos</span>
-          </div>
-        </div>
-
-        <!-- STARKNET CONTRACTS -->
+        <!-- STARKNET CONTRACTS - PROYECTO #3 (PREMIO BUILDATHON) -->
         <div class="gh-card">
           <div class="gh-header">
             <a href="https://github.com/epinki07/starknet-contracts" target="_blank" class="gh-repo-name">
@@ -579,22 +571,66 @@
           </div>
         </div>
 
-        <!-- JAVA UNIDAD 1 -->
+        <!-- BACCARAT ANALYZER -->
         <div class="gh-card">
           <div class="gh-header">
-            <a href="https://github.com/epinki07/java-unidad1" target="_blank" class="gh-repo-name">
+            <a href="https://github.com/epinki07/baccarat_analyzer" target="_blank" class="gh-repo-name">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
-              java-unidad1
+              baccarat_analyzer
             </a>
-            <span class="gh-date">2025 · Sep</span>
+            <span class="gh-date">2026 · Ene</span>
           </div>
-          <p class="gh-desc" id="project-java-unit-desc">
-            Colección de ejercicios iniciales de Java que documenta mi curva de aprendizaje
-            desde los fundamentos. Lo mantengo como evidencia de disciplina y progreso real.
+          <p class="gh-desc" id="project-baccarat-desc">
+            Aplicación analítica en <strong>Python + Streamlit</strong> para detectar
+            patrones, simular bankroll y explorar datos de juego. Incluye estructura
+            modular y tests, así que comunica bien pensamiento analítico y disciplina
+            técnica.
           </p>
           <div class="gh-footer">
-            <span class="gh-lang"><span class="lang-dot lang-java"></span> Java</span>
-            <span class="gh-lang">Fundamentos · Estructuras · Lógica</span>
+            <span class="gh-lang"><span class="lang-dot lang-python"></span> Python</span>
+            <span class="gh-lang">Streamlit · Analytics · CSV</span>
+          </div>
+        </div>
+
+        <!-- CIFRADO CESAR -->
+        <div class="gh-card">
+          <div class="gh-header">
+            <a href="https://github.com/epinki07/cifrado-cesar" target="_blank" class="gh-repo-name">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+              cifrado-cesar
+            </a>
+            <span class="gh-date">2025 · Oct</span>
+          </div>
+          <p class="gh-desc" id="project-caesar-desc">
+            Herramienta CLI en <strong>Python</strong> para cifrar y descifrar texto con
+            soporte para ñ, fuerza bruta y variantes de alfabeto. Proyecto pequeño,
+            pero útil para mostrar fundamentos sólidos, manejo de lógica y atención al
+            detalle.
+          </p>
+          <div class="gh-footer">
+            <span class="gh-lang"><span class="lang-dot lang-python"></span> Python</span>
+            <span class="gh-lang">Criptografía · CLI · SO</span>
+          </div>
+        </div>
+
+        <!-- COLAB DATA STRUCTURES -->
+        <div class="gh-card">
+          <div class="gh-header">
+            <a href="https://github.com/epinki07/python-data-structures-colab" target="_blank" class="gh-repo-name">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+              python-data-structures-colab
+            </a>
+            <span class="gh-date">2026 · Abr</span>
+          </div>
+          <p class="gh-desc" id="project-colab-ds-desc">
+            Repositorio ordenado de ejercicios de <strong>Estructura de Datos</strong>
+            desarrollados originalmente en <strong>Google Colab con Python</strong>.
+            Reúne prácticas de búsquedas, listas enlazadas, grafos y análisis de
+            complejidad en una estructura más clara para consulta y revisión.
+          </p>
+          <div class="gh-footer">
+            <span class="gh-lang"><span class="lang-dot lang-python"></span> Python</span>
+            <span class="gh-lang">Google Colab · Estructuras de Datos</span>
           </div>
         </div>
 
@@ -616,7 +652,95 @@
             <span class="gh-lang"><span class="lang-dot lang-java"></span> Java</span>
             <span class="gh-lang">Udemy · 9 secciones · MySQL</span>
           </div>
+          <div style="margin-top:.6rem;">
+            <a href="#logros" style="font-size:.75rem; color:var(--accent); text-decoration:none; display:inline-flex; align-items:center; gap:.3rem;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              Ver certificado Udemy →
+            </a>
+          </div>
         </div>
+
+        <!-- EJERCICIOS JAVA CLASE -->
+        <div class="gh-card">
+          <div class="gh-header">
+            <a href="https://github.com/epinki07/ejercicios-java" target="_blank" class="gh-repo-name">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+              ejercicios-java
+            </a>
+            <span class="gh-date">2025 · Sep</span>
+          </div>
+          <p class="gh-desc" id="project-java-exercises-desc">
+            Repositorio de fundamentos con <strong>21 ejercicios de Java</strong>. No es
+            mi proyecto más complejo, pero sí evidencia una base consistente en lógica,
+            control de flujo y orientación a objetos.
+          </p>
+          <div class="gh-footer">
+            <span class="gh-lang"><span class="lang-dot lang-java"></span> Java</span>
+            <span class="gh-lang">POO · Fundamentos</span>
+          </div>
+        </div>
+
+        <!-- JAVA UNIDAD 1 -->
+        <div class="gh-card">
+          <div class="gh-header">
+            <a href="https://github.com/epinki07/java-unidad1" target="_blank" class="gh-repo-name">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+              java-unidad1
+            </a>
+            <span class="gh-date">2025 · Sep</span>
+          </div>
+          <p class="gh-desc" id="project-java-unit-desc">
+            Colección de ejercicios iniciales de Java que documenta mi curva de aprendizaje
+            desde los fundamentos. Lo mantengo como evidencia de disciplina y progreso real.
+          </p>
+          <div class="gh-footer">
+            <span class="gh-lang"><span class="lang-dot lang-java"></span> Java</span>
+            <span class="gh-lang">Fundamentos · Estructuras · Lógica</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTAS -->
+  <section id="notas">
+    <div class="container">
+      <span class="section-tag" id="notes-tag">// notas técnicas</span>
+      <h2 class="section-title" id="notes-title">Lo que <span>aprendí</span></h2>
+      <div class="divider"></div>
+      <p class="section-sub" id="notes-sub" style="margin-bottom:2rem;">
+        Cuatro textos cortos sobre cosas que hice, cómo las hice y qué me dejaron. Sin tutorial, sin fórmula — solo la versión honesta de lo que pasó.
+      </p>
+      <div class="notas-grid">
+
+        <a href="blog/150-ejercicios-java.html" class="nota-card">
+          <span class="nota-tag">Java · Formacion</span>
+          <h3>150 ejercicios y un certificado: por qué le di a Java más tiempo del que me pedían</h3>
+          <p>No fue solo terminar el curso. Fue entender por qué Java y no otro lenguaje para los proyectos que quiero hacer.</p>
+          <span class="nota-read">Leer nota →</span>
+        </a>
+
+        <a href="blog/buildathon-48-horas.html" class="nota-card">
+          <span class="nota-tag">Blockchain · Cairo</span>
+          <h3>48 horas con Cairo: el buildathon que no pensaba ganar</h3>
+          <p>Entramos sin saber Cairo. Salimos con el primer lugar. Esto es lo que pasó entre el viernes y el domingo.</p>
+          <span class="nota-read">Leer nota →</span>
+        </a>
+
+        <a href="blog/por-que-construi-sqad.html" class="nota-card">
+          <span class="nota-tag">Java · Iniciativa</span>
+          <h3>Por qué construí SQAD cuando nadie me lo pidió</h3>
+          <p>Ya tenía Food Sense. Ya había terminado IFTP. Pero algo del problema no me dejaba cerrar la laptop.</p>
+          <span class="nota-read">Leer nota →</span>
+        </a>
+
+        <a href="blog/food-sense-iftp.html" class="nota-card">
+          <span class="nota-tag">IoT · Competencia</span>
+          <h3>Lo que nadie cuenta de participar en Invent for the Planet</h3>
+          <p>Un hackathon universitario internacional, un equipo, sensores que no llegaban y un backend terminado a las 3am.</p>
+          <span class="nota-read">Leer nota →</span>
+        </a>
 
       </div>
     </div>
@@ -634,28 +758,53 @@
           me interesa crecer en backend y producto, y busco prácticas, colaboración en
           proyectos y oportunidades de entrada donde pueda aportar de verdad.
         </p>
-        <div class="contact-cards">
-          <a href="mailto:dramirezmagana@gmail.com" class="contact-card">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-            </svg>
-            dramirezmagana@gmail.com
-          </a>
-          <a href="https://www.linkedin.com/in/diego-ramirez-maga%C3%B1a-b15022298/" target="_blank" class="contact-card">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-              <rect x="2" y="9" width="4" height="12"/>
-              <circle cx="4" cy="4" r="2"/>
-            </svg>
-            LinkedIn
-          </a>
-          <a href="https://github.com/epinki07" target="_blank" class="contact-card">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-              <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-            </svg>
-            GitHub
-          </a>
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Portfolio Contact — Diego Ramirez Magaña"/>
+          <div class="form-group">
+            <label for="form-name" id="form-label-name">Nombre</label>
+            <input type="text" id="form-name" name="name" required autocomplete="name"
+              data-ph-es="Tu nombre" data-ph-en="Your name" placeholder="Tu nombre"/>
+          </div>
+          <div class="form-group">
+            <label for="form-email" id="form-label-email">Correo</label>
+            <input type="email" id="form-email" name="email" required autocomplete="email"
+              data-ph-es="tu@correo.com" data-ph-en="you@email.com" placeholder="tu@correo.com"/>
+          </div>
+          <div class="form-group">
+            <label for="form-message" id="form-label-message">Mensaje</label>
+            <textarea id="form-message" name="message" required rows="5"
+              data-ph-es="Cuéntame sobre la oportunidad..." data-ph-en="Tell me about the opportunity..." placeholder="Cuéntame sobre la oportunidad..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit" id="form-submit-btn">Enviar mensaje</button>
+          <p class="form-status form-status--success" id="form-success" hidden></p>
+          <p class="form-status form-status--error" id="form-error" hidden></p>
+        </form>
+
+        <div class="contact-alt">
+          <p class="contact-alt-label" id="contact-alt-label">O contáctame directamente:</p>
+          <div class="contact-cards">
+            <a href="mailto:dramirezmagana@gmail.com" class="contact-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              dramirezmagana@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/diego-ramirez-maga%C3%B1a-b15022298/" target="_blank" class="contact-card">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/epinki07" target="_blank" class="contact-card">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+              </svg>
+              GitHub
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -666,6 +815,24 @@
     <div class="modal-inner">
       <button class="modal-close" type="button" aria-label="Cerrar imagen">✕</button>
       <img src="buildathon-constancia.png" alt="Constancia oficial del StarkNet Buildathon 2025 · 1er Lugar · Diego Ramirez Magaña"/>
+    </div>
+  </div>
+
+  <!-- MODAL PDF UDEMY -->
+  <div class="modal-overlay" id="modal-udemy-pdf" role="dialog" aria-modal="true" aria-label="Certificado Udemy Java">
+    <div class="modal-inner modal-inner--pdf">
+      <button class="modal-close" type="button" aria-label="Cerrar certificado">✕</button>
+      <iframe
+        src="cv/certificado-udemy-java.pdf"
+        title="Certificado Udemy — Aprende Java con 100 ejercicios prácticos"
+        width="100%"
+        height="100%"
+        style="border:none; border-radius:8px;"
+        loading="lazy">
+        <p>Tu navegador no puede mostrar el PDF.
+          <a href="cv/certificado-udemy-java.pdf" target="_blank" rel="noopener noreferrer">Descárgalo aquí</a>
+        </p>
+      </iframe>
     </div>
   </div>
 

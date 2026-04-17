@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>48 horas con Cairo — Diego Ramirez Magaña</title>
+  <meta name="description" content="Entramos al Starknet Buildathon 2025 sin saber Cairo. Salimos con el primer lugar. Esto es lo que pasó entre el viernes y el domingo."/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%233b82f6'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,sans-serif' font-weight='800' font-size='14' fill='white'>DR</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <style>
+    .blog-wrap { max-width: 680px; margin: 0 auto; padding: 6rem 1.5rem 5rem; }
+    .blog-back { display: inline-flex; align-items: center; gap: .4rem; font-size: .82rem; color: var(--muted); text-decoration: none; margin-bottom: 2.5rem; }
+    .blog-back:hover { color: var(--accent); }
+    .blog-tag { font-family: 'Fira Code', monospace; font-size: .72rem; color: var(--accent); background: var(--accent-soft-bg); border: 1px solid var(--accent-soft-bd); border-radius: 20px; padding: .2rem .65rem; }
+    .blog-title { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; line-height: 1.25; margin: 1rem 0 .5rem; color: var(--text); }
+    .blog-meta { font-size: .78rem; color: var(--muted); margin-bottom: 2.5rem; }
+    .blog-body { font-size: 1rem; line-height: 1.85; color: var(--text); }
+    .blog-body p { margin-bottom: 1.4rem; }
+    .blog-body h2 { font-size: 1.15rem; font-weight: 600; margin: 2.2rem 0 .8rem; color: var(--text); }
+    .blog-body code { font-family: 'Fira Code', monospace; font-size: .85em; background: var(--card2); padding: .1em .4em; border-radius: 4px; color: var(--accent2); }
+    .blog-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    .blog-footer-nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .blog-footer-nav a { font-size: .82rem; color: var(--accent); text-decoration: none; }
+    .blog-footer-nav a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<div class="blog-wrap">
+  <a href="../index.html" class="blog-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    Volver al portafolio
+  </a>
+
+  <span class="blog-tag">Blockchain · Cairo</span>
+  <h1 class="blog-title">48 horas con Cairo: el buildathon que no pensaba ganar</h1>
+  <p class="blog-meta">Abril 2026 · 5 min de lectura</p>
+
+  <div class="blog-body">
+
+    <p>
+      Cuando me inscribí al Starknet Buildathon no tenía ni idea de qué era Cairo. Sabía que StarkNet era una red Layer 2 de Ethereum que usa zero-knowledge proofs, pero eso lo había leído en un artículo, no lo había tocado. El lenguaje Cairo, que es con el que se escriben los contratos de esa red, no lo había visto en mi vida.
+    </p>
+
+    <p>
+      La decisión de entrar fue impulsiva. Vi el anuncio, pensé que era una buena oportunidad para ver cómo funcionaba el desarrollo Web3 desde adentro, y me inscribí. El plan era aprender algo, no ganar.
+    </p>
+
+    <h2>El viernes: leer documentación a las 11pm</h2>
+
+    <p>
+      El primer día fue casi completamente de lectura. La documentación de Cairo es razonablemente buena pero densa. El lenguaje se parece a Rust en varias cosas: tipado estático fuerte, sintaxis con <code>fn</code>, manejo explícito de tipos. Eso me ayudó porque Rust lo había visto aunque no lo hubiera usado en proyectos propios.
+    </p>
+
+    <p>
+      Lo que más me costó al principio fue entender el modelo de almacenamiento en StarkNet. En un programa normal tienes variables. En un contrato on-chain tienes storage que persiste entre llamadas y está asociado a la dirección del contrato. El primer contrato que escribí guardaba datos en variables locales que se perdían con cada transacción. Tuve que releer cómo declarar <code>Storage</code> y empezar de nuevo.
+    </p>
+
+    <h2>El sábado: el proyecto toma forma</h2>
+
+    <p>
+      La idea de Rent Chain salió esa mañana. Una plataforma de renta descentralizada donde el contrato funciona como el intermediario: guarda el depósito, valida las condiciones de la renta, y libera el pago cuando se cumplen. Sin banco, sin plataforma centralizada que se queda con una comisión.
+    </p>
+
+    <p>
+      El concepto era más grande de lo que dos días permitían construir, así que redujimos el alcance a los contratos base: un <code>DigitalVault</code> para manejar los depósitos asociados a direcciones, y un <code>MessageBoard</code> para registrar el historial de acuerdos. La lógica completa de la renta quedó como documentación del proyecto, con los contratos como prueba de que sabíamos escribir Cairo y entendíamos la arquitectura.
+    </p>
+
+    <p>
+      Lo que más tiempo tomó no fue el código sino hacer que el ambiente de desarrollo funcionara. Scarb, el manejador de paquetes de Cairo, tiene versiones que no siempre son compatibles entre sí. Pasé dos horas arreglando dependencias antes de poder compilar algo que no diera error.
+    </p>
+
+    <h2>El domingo: la presentación</h2>
+
+    <p>
+      No dormí mucho el sábado por la noche. No porque estuviera programando sino porque estaba ensayando cómo explicar algo que apenas había aprendido de forma que sonara coherente ante personas que lo conocen bien. Eso es más difícil de lo que parece.
+    </p>
+
+    <p>
+      La presentación fue de 10 minutos. Expliqué el problema, la propuesta, los contratos, y por qué Layer 2 para este caso de uso específico. El jurado preguntó sobre seguridad: cómo evitamos que alguien manipulation el storage directamente. Esa pregunta la había anticipado porque la había tenido yo mismo durante el desarrollo.
+    </p>
+
+    <p>
+      Ganamos. No lo esperaba de verdad. La retroalimentación del jurado fue que la propuesta de valor era clara y que los contratos demostraban comprensión real del modelo de StarkNet, no solo código copiado de tutoriales.
+    </p>
+
+    <h2>Lo que me dejó</h2>
+
+    <p>
+      Blockchain sigue sin ser mi foco principal. Después del buildathon no me convertí en desarrollador Web3 ni eso era el objetivo. Pero aprendí algo más útil: que puedo aprender tecnologías completamente nuevas bajo presión y producir algo funcional. Eso es lo que quiero demostrar con ese proyecto, no que sé Cairo de memoria.
+    </p>
+
+    <p>
+      El repositorio de los contratos está en GitHub. El código es simple, los comentarios son mínimos, y se puede leer en menos de una hora. Si alguien quiere ver cómo aprendí algo nuevo de forma acelerada, ese es el mejor ejemplo que tengo.
+    </p>
+
+  </div>
+
+  <hr class="blog-divider"/>
+  <div class="blog-footer-nav">
+    <a href="150-ejercicios-java.html">← Java y el certificado</a>
+    <a href="por-que-construi-sqad.html">Siguiente: SQAD →</a>
+  </div>
+</div>
+<script>
+  (function () {
+    var theme = localStorage.getItem('portfolio-theme') === 'light' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+</body>
+</html>
