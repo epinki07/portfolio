@@ -14,7 +14,6 @@ Portafolio personal construido con HTML, CSS y JavaScript vanilla. Sin framework
 | Estilos | CSS3 con custom properties, responsive en 3 breakpoints |
 | Lógica | JavaScript ES6+ vanilla (sin dependencias) |
 | Hosting | GitHub Pages (rama `main`) |
-| Formulario | Formspree (fetch API, sin backend propio) |
 
 ---
 
@@ -44,7 +43,6 @@ portfolio/
 - **Internacionalización** — ES/EN sin librerías externas
 - **Scroll reveal** — Intersection Observer API
 - **Skill bars animadas** — animación on-scroll
-- **Formulario de contacto** — envío via Formspree, estados de éxito/error
 - **Modal lightbox** — certificado del Buildathon
 - **SEO estructurado** — JSON-LD Schema.org Person, sitemap con hreflang
 - **Responsive** — mobile-first, breakpoints en 768px y 560px
@@ -67,19 +65,6 @@ npx serve .
 ```
 
 Luego abre `http://localhost:3000` en el navegador.
-
----
-
-## Configurar el formulario de contacto
-
-El formulario usa [Formspree](https://formspree.io):
-
-1. Crea una cuenta en formspree.io
-2. Crea un nuevo form y copia el ID (ej. `mldepjvo`)
-3. En `js/main.js`, reemplaza `YOUR_FORMSPREE_ID` con tu ID:
-   ```js
-   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORMSPREE_ID';
-   ```
 
 ---
 

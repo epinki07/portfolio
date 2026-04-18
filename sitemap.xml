@@ -3,10 +3,34 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://epinki07.github.io/portfolio/</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://epinki07.github.io/portfolio/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://epinki07.github.io/portfolio/"/>
+  </url>
+  <url>
+    <loc>https://epinki07.github.io/portfolio/blog/150-ejercicios-java.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://epinki07.github.io/portfolio/blog/buildathon-48-horas.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://epinki07.github.io/portfolio/blog/por-que-construi-sqad.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://epinki07.github.io/portfolio/blog/food-sense-iftp.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

@@ -93,12 +93,6 @@
     updateThemeToggle(currentLang);
   }
 
-  function updatePlaceholders(lang) {
-    document.querySelectorAll(`[data-ph-${lang}]`).forEach(el => {
-      el.placeholder = el.getAttribute(`data-ph-${lang}`);
-    });
-  }
-
   function applyTranslations(lang) {
     const translation = translations[lang];
     currentLang = lang;
@@ -112,7 +106,6 @@
     Object.entries(translation.content).forEach(([id, value]) => setInnerHtml(id, value));
     updateLanguageToggle(lang);
     updateThemeToggle(lang);
-    updatePlaceholders(lang);
     startTyping(translation.typingLabel);
   }
 
@@ -134,8 +127,22 @@
 
   /* ── MODAL DELEGATION (sin onclick inline) ── */
   const certificateModal = document.getElementById('modal-constancia');
-  function openModal(modal) { modal.classList.add('active'); }
-  function closeModal(modal) { modal.classList.remove('active'); }
+  let lastFocusedBeforeModal = null;
+
+  function openModal(modal) {
+    lastFocusedBeforeModal = document.activeElement;
+    modal.classList.add('active');
+    const closeBtn = modal.querySelector('.modal-close');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeModal(modal) {
+    modal.classList.remove('active');
+    if (lastFocusedBeforeModal) {
+      lastFocusedBeforeModal.focus();
+      lastFocusedBeforeModal = null;
+    }
+  }
 
   if (certificateTrigger && certificateModal) {
     certificateTrigger.setAttribute('role', 'button');
@@ -177,9 +184,23 @@
     });
   });
   document.addEventListener('keydown', event => {
-    if (event.key !== 'Escape') return;
-    setMenuState(false);
-    document.querySelectorAll('.modal-overlay.active').forEach(closeModal);
+    const activeModal = document.querySelector('.modal-overlay.active');
+    if (event.key === 'Escape') {
+      setMenuState(false);
+      if (activeModal) closeModal(activeModal);
+      return;
+    }
+    if (event.key === 'Tab' && activeModal) {
+      const focusable = [...activeModal.querySelectorAll('button, [href], iframe, [tabindex]:not([tabindex="-1"])')];
+      if (!focusable.length) { event.preventDefault(); return; }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey) {
+        if (document.activeElement === first) { event.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
+    }
   });
 
   document.querySelectorAll('a[target="_blank"]').forEach(link => {
@@ -306,47 +327,6 @@
 
     countObs.observe(element);
   });
-
-  /* ── CONTACT FORM ── */
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORMSPREE_ID';
-  const contactForm = document.getElementById('contact-form');
-  const formSuccess = document.getElementById('form-success');
-  const formError = document.getElementById('form-error');
-  const formSubmitBtn = document.getElementById('form-submit-btn');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', async event => {
-      event.preventDefault();
-      if (!contactForm.checkValidity()) {
-        contactForm.reportValidity();
-        return;
-      }
-      const originalLabel = formSubmitBtn.textContent;
-      formSubmitBtn.disabled = true;
-      formSubmitBtn.textContent = currentLang === 'es' ? 'Enviando…' : 'Sending…';
-      formSuccess.hidden = true;
-      formError.hidden = true;
-
-      try {
-        const response = await fetch(FORMSPREE_ENDPOINT, {
-          method: 'POST',
-          headers: { Accept: 'application/json' },
-          body: new FormData(contactForm),
-        });
-        if (response.ok) {
-          formSuccess.hidden = false;
-          contactForm.reset();
-        } else {
-          formError.hidden = false;
-        }
-      } catch {
-        formError.hidden = false;
-      } finally {
-        formSubmitBtn.disabled = false;
-        formSubmitBtn.textContent = originalLabel;
-      }
-    });
-  }
 
   applyTranslations(currentLang);
   applyTheme(currentTheme);

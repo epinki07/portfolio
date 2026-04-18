@@ -13,6 +13,7 @@
   <meta property="og:description" id="meta-og-description" content="Estudiante de software con proyectos en Java, Spring Boot, Python, IoT y StarkNet. Dos premios en competencias. Busco prácticas en backend, REST APIs, MySQL. Abierto a roles junior."/>
   <meta property="og:image"       content="buildathon-constancia.png"/>
   <meta name="description"        id="meta-description" content="Portafolio de Diego Ramirez Magaña. Estudiante de software con proyectos en Java, Spring Boot, Python, REST APIs, MySQL, IoT. 2 premios en competencias. Abierto a prácticas y oportunidades junior en backend."/>
+  <meta name="author"             content="Diego Ramirez Magaña"/>
   <meta name="theme-color"        content="#3b82f6"/>
 
   <script>
@@ -81,6 +82,8 @@
   }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/styles.css"/>
 
@@ -99,7 +102,7 @@
   <div id="scroll-progress"></div>
 
   <!-- NAV -->
-  <nav>
+  <nav aria-label="Navegación principal">
     <span class="nav-logo">diego.dev()</span>
     <ul class="nav-links" id="nav-links">
       <li><a href="#about" id="nav-about">Sobre mí</a></li>
@@ -168,7 +171,7 @@
       </div>
       <div class="hero-avatar-wrap">
         <div class="hero-avatar">
-          <img src="profile.jpg" alt="Foto de Diego Ramirez Magaña, estudiante de Ingeniería en Software"/>
+          <img src="profile.jpg" alt="Foto de Diego Ramirez Magaña, estudiante de Ingeniería en Software" width="320" height="320" fetchpriority="high"/>
         </div>
         <span class="online-pill" id="availability-pill">Abierto a prácticas / junior</span>
       </div>
@@ -187,7 +190,7 @@
       <div class="about-grid">
         <div class="about-card">
           <div class="about-avatar">
-            <img src="profile.jpg" alt="Retrato de Diego Ramirez Magaña" loading="lazy" decoding="async"/>
+            <img src="profile.jpg" alt="Retrato de Diego Ramirez Magaña" loading="lazy" decoding="async" width="160" height="160"/>
           </div>
           <h3>Diego Ramirez Magaña</h3>
           <p id="about-card-program">Tecnológico del Software<br/>Ing. en Software &amp; Negocios Digitales</p>
@@ -430,7 +433,7 @@
               adaptarme rápido a tecnologías nuevas y ejecutar bajo presión competitiva.
             </p>
             <div class="constancia-thumb" id="certificate-trigger">
-              <img src="buildathon-constancia.png" alt="Vista previa de la constancia del StarkNet Buildathon 2025" class="constancia-thumb-img" loading="lazy" decoding="async"/>
+              <img src="buildathon-constancia.png" alt="Vista previa de la constancia del StarkNet Buildathon 2025" class="constancia-thumb-img" loading="lazy" decoding="async" width="80" height="56"/>
               <div class="constancia-thumb-info">
                 <span class="constancia-thumb-name" id="certificate-title">📄 Constancia oficial</span>
                 <span class="constancia-thumb-meta" id="certificate-meta">StarkNet Buildathon 2025 · Clic para ver →</span>
@@ -758,28 +761,6 @@
           me interesa crecer en backend y producto, y busco prácticas, colaboración en
           proyectos y oportunidades de entrada donde pueda aportar de verdad.
         </p>
-        <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="Portfolio Contact — Diego Ramirez Magaña"/>
-          <div class="form-group">
-            <label for="form-name" id="form-label-name">Nombre</label>
-            <input type="text" id="form-name" name="name" required autocomplete="name"
-              data-ph-es="Tu nombre" data-ph-en="Your name" placeholder="Tu nombre"/>
-          </div>
-          <div class="form-group">
-            <label for="form-email" id="form-label-email">Correo</label>
-            <input type="email" id="form-email" name="email" required autocomplete="email"
-              data-ph-es="tu@correo.com" data-ph-en="you@email.com" placeholder="tu@correo.com"/>
-          </div>
-          <div class="form-group">
-            <label for="form-message" id="form-label-message">Mensaje</label>
-            <textarea id="form-message" name="message" required rows="5"
-              data-ph-es="Cuéntame sobre la oportunidad..." data-ph-en="Tell me about the opportunity..." placeholder="Cuéntame sobre la oportunidad..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary form-submit" id="form-submit-btn">Enviar mensaje</button>
-          <p class="form-status form-status--success" id="form-success" hidden></p>
-          <p class="form-status form-status--error" id="form-error" hidden></p>
-        </form>
-
         <div class="contact-alt">
           <p class="contact-alt-label" id="contact-alt-label">O contáctame directamente:</p>
           <div class="contact-cards">
@@ -814,7 +795,7 @@
   <div class="modal-overlay" id="modal-constancia" role="dialog" aria-modal="true" aria-label="Constancia StarkNet Buildathon">
     <div class="modal-inner">
       <button class="modal-close" type="button" aria-label="Cerrar imagen">✕</button>
-      <img src="buildathon-constancia.png" alt="Constancia oficial del StarkNet Buildathon 2025 · 1er Lugar · Diego Ramirez Magaña"/>
+      <img src="buildathon-constancia.png" alt="Constancia oficial del StarkNet Buildathon 2025 · 1er Lugar · Diego Ramirez Magaña" width="900" height="636"/>
     </div>
   </div>
 
