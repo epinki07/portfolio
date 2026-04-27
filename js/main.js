@@ -171,6 +171,21 @@
     });
   }
 
+  const redesCertTrigger = document.getElementById('redes-cert-trigger');
+  const redesCertModal = document.getElementById('modal-redes-pdf');
+  if (redesCertTrigger && redesCertModal) {
+    redesCertTrigger.setAttribute('role', 'button');
+    redesCertTrigger.setAttribute('tabindex', '0');
+    redesCertTrigger.style.cursor = 'pointer';
+    redesCertTrigger.addEventListener('click', () => openModal(redesCertModal));
+    redesCertTrigger.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(redesCertModal);
+      }
+    });
+  }
+
   document.querySelectorAll('.modal-overlay').forEach(overlay => {
     overlay.addEventListener('click', event => {
       if (event.target === overlay) closeModal(overlay);
