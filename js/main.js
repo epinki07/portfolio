@@ -315,6 +315,7 @@
     ...document.querySelectorAll('.about-card'),
     ...document.querySelectorAll('.about-body'),
     ...document.querySelectorAll('.latest-card'),
+    ...document.querySelectorAll('.ai-card'),
   ];
   revealEls.forEach(element => element.classList.add('reveal'));
   const revealObs = new IntersectionObserver(entries => {

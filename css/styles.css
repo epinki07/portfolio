@@ -220,6 +220,27 @@ nav {
   color: var(--hero-desc); font-size: .95rem;
   max-width: 460px; line-height: 1.8; margin-bottom: 2.25rem;
 }
+.latest-hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  margin: 1rem 0 1.2rem;
+  padding: .45rem .8rem;
+  border-radius: 999px;
+  background: var(--accent-soft-bg2);
+  border: 1px solid var(--accent-soft-bd2);
+  color: var(--accent);
+  font-family: 'Fira Code', monospace;
+  font-size: .72rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .2s, border-color .2s, background .2s;
+}
+.latest-hero-link:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  background: var(--card-hover-accent-bg);
+}
 .hero-btns { display: flex; gap: .85rem; flex-wrap: wrap; }
 
 /* ── QUÉ BUSCO ── */
@@ -482,6 +503,45 @@ section {
   gap: .75rem;
   flex-wrap: wrap;
   margin-top: 1rem;
+}
+
+/* ── IA APLICADA ── */
+#ia { background: var(--bg2); }
+.ai-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent2);
+  border-radius: 0 16px 16px 0;
+  padding: 1.4rem 1.5rem;
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+.ai-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent-soft-bg3), var(--accent2-soft-bg));
+  border: 1px solid var(--accent2-soft-bd2);
+  color: var(--accent2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fira Code', monospace;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+.ai-copy p {
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.8;
+  margin-bottom: .85rem;
+}
+.ai-copy p:last-child { margin-bottom: 0; }
+.ai-copy strong {
+  color: var(--text);
+  font-weight: 600;
 }
 
 /* ── SKILLS ── */
@@ -832,6 +892,16 @@ footer span { color: var(--accent); }
   .latest-actions {
     justify-content: center;
   }
+  .ai-card {
+    grid-template-columns: 1fr;
+    border-radius: 14px;
+    border-left-width: 1px;
+    padding: 1.1rem;
+  }
+  .ai-icon {
+    width: 56px;
+    height: 56px;
+  }
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -964,6 +1034,10 @@ footer span { color: var(--accent); }
   }
   .latest-actions .btn {
     width: 100%;
+  }
+  .ai-copy p {
+    font-size: .84rem;
+    line-height: 1.7;
   }
   .logros-list {
     gap: .75rem;
