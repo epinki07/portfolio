@@ -128,11 +128,11 @@
     <span class="nav-logo">diego.dev()</span>
     <ul class="nav-links" id="nav-links">
       <li><a href="#about" id="nav-about">Sobre mí</a></li>
-      <li><a href="#reciente" id="nav-latest">Lo más reciente</a></li>
-      <li><a href="#ia" id="nav-ai">IA</a></li>
       <li><a href="#skills" id="nav-skills">Habilidades</a></li>
       <li><a href="#logros" id="nav-achievements">Logros</a></li>
+      <li><a href="#reciente" id="nav-latest">Lo más reciente</a></li>
       <li><a href="#portafolio" id="nav-projects">Proyectos</a></li>
+      <li><a href="#ia" id="nav-ai">IA</a></li>
       <li><a href="#notas" id="nav-notes">Notas</a></li>
       <li><a href="#contacto" id="nav-contact">Contacto</a></li>
     </ul>
@@ -207,69 +207,6 @@
         <path d="M12 5v14M5 12l7 7 7-7"/>
       </svg>
       <span id="scroll-hint-label">desplázate</span>
-    </div>
-  </section>
-
-  <!-- LO MÁS RECIENTE -->
-  <section id="reciente">
-    <div class="container">
-      <span class="section-tag" id="latest-tag">// lo más reciente</span>
-      <h2 class="section-title" id="latest-title">Evidencia <span>reciente</span></h2>
-      <div class="divider"></div>
-      <p class="section-sub" id="latest-sub">
-        Nueva evidencia agregada al portafolio: formación cloud verificable con PDF completo y badge digital.
-      </p>
-
-      <div class="latest-card">
-        <div class="latest-badge-wrap">
-          <img src="assets/aws-academy-cloud-operations-badge.png" alt="Badge AWS Academy Cloud Operations Trained" class="latest-badge-img" loading="lazy" decoding="async" width="180" height="180"/>
-        </div>
-        <div class="latest-info">
-          <span class="latest-kicker" id="latest-aws-kicker">Certificados / Evidencias / Cloud &amp; AWS</span>
-          <h3 id="latest-aws-title">AWS Academy Graduate — Cloud Operations Training</h3>
-          <p id="latest-aws-desc">
-            Certificado de <strong>AWS Academy</strong> por completar entrenamiento en
-            <strong>Cloud Operations</strong>. Evidencia completa en PDF con mi nombre,
-            duración de <strong>40 horas</strong>, fecha de emisión
-            <strong>6 de julio de 2026</strong> y referencia al badge digital en Credly.
-          </p>
-          <div class="latest-actions">
-            <button class="btn btn-primary" type="button" id="aws-cert-trigger">Ver PDF completo</button>
-            <a class="btn btn-ghost" id="latest-aws-download" href="cv/AWS_Academy_Cloud_Operations_Diego_Ramirez_2026.pdf" target="_blank" rel="noopener noreferrer">Abrir evidencia</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- IA COMO HERRAMIENTA -->
-  <section id="ia">
-    <div class="container">
-      <span class="section-tag" id="ai-tag">// IA aplicada</span>
-      <h2 class="section-title" id="ai-title">Cómo uso la <span>IA</span></h2>
-      <div class="divider"></div>
-      <div class="ai-card">
-        <div class="ai-icon" aria-hidden="true">IA</div>
-        <div class="ai-copy">
-          <p id="ai-p1">
-            Me interesa demasiado aprender más sobre <strong>inteligencia artificial</strong>
-            porque la veo como una herramienta real para acelerar el aprendizaje,
-            explorar ideas y mejorar la forma en que construyo software.
-          </p>
-          <p id="ai-p2">
-            No la uso como sustituto de mi criterio ni de mi trabajo. La uso para
-            <strong>potenciar mi productividad</strong>: comparar enfoques, detectar
-            errores, ordenar ideas, documentar mejor y avanzar más rápido sin dejar de
-            entender lo que estoy haciendo.
-          </p>
-          <p id="ai-p3">
-            Mi planteamiento es simple: si una herramienta me ayuda a aprender mejor,
-            iterar con más claridad y entregar con más calidad, quiero dominarla. La IA
-            me interesa justo por eso: como apoyo técnico para trabajar con más enfoque,
-            no como una forma de evitar aprender.
-          </p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -644,6 +581,38 @@
     </div>
   </section>
 
+  <!-- LO MÁS RECIENTE -->
+  <section id="reciente">
+    <div class="container">
+      <span class="section-tag" id="latest-tag">// lo más reciente</span>
+      <h2 class="section-title" id="latest-title">Evidencia <span>reciente</span></h2>
+      <div class="divider"></div>
+      <p class="section-sub" id="latest-sub">
+        Nueva evidencia agregada al portafolio: formación cloud verificable con PDF completo y badge digital.
+      </p>
+
+      <div class="latest-card">
+        <div class="latest-badge-wrap">
+          <img src="assets/aws-academy-cloud-operations-badge.png" alt="Badge AWS Academy Cloud Operations Trained" class="latest-badge-img" loading="lazy" decoding="async" width="180" height="180"/>
+        </div>
+        <div class="latest-info">
+          <span class="latest-kicker" id="latest-aws-kicker">Certificados / Evidencias / Cloud &amp; AWS</span>
+          <h3 id="latest-aws-title">AWS Academy Graduate — Cloud Operations Training</h3>
+          <p id="latest-aws-desc">
+            Certificado de <strong>AWS Academy</strong> por completar entrenamiento en
+            <strong>Cloud Operations</strong>. Evidencia completa en PDF con mi nombre,
+            duración de <strong>40 horas</strong>, fecha de emisión
+            <strong>6 de julio de 2026</strong> y referencia al badge digital en Credly.
+          </p>
+          <div class="latest-actions">
+            <a class="btn btn-primary" id="aws-cert-trigger" href="cv/AWS_Academy_Cloud_Operations_Diego_Ramirez_2026.pdf" target="_blank" rel="noopener noreferrer">Ver PDF completo</a>
+            <a class="btn btn-ghost" id="latest-aws-download" href="cv/AWS_Academy_Cloud_Operations_Diego_Ramirez_2026.pdf" download>Descargar PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- PORTAFOLIO -->
   <section id="portafolio">
     <div class="container">
@@ -890,6 +859,37 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- IA COMO HERRAMIENTA -->
+  <section id="ia">
+    <div class="container">
+      <span class="section-tag" id="ai-tag">// IA aplicada</span>
+      <h2 class="section-title" id="ai-title">Cómo uso la <span>IA</span></h2>
+      <div class="divider"></div>
+      <div class="ai-card">
+        <div class="ai-icon" aria-hidden="true">IA</div>
+        <div class="ai-copy">
+          <p id="ai-p1">
+            Me interesa demasiado aprender más sobre <strong>inteligencia artificial</strong>
+            porque la veo como una herramienta real para acelerar el aprendizaje,
+            explorar ideas y mejorar la forma en que construyo software.
+          </p>
+          <p id="ai-p2">
+            No la uso como sustituto de mi criterio ni de mi trabajo. La uso para
+            <strong>potenciar mi productividad</strong>: comparar enfoques, detectar
+            errores, ordenar ideas, documentar mejor y avanzar más rápido sin dejar de
+            entender lo que estoy haciendo.
+          </p>
+          <p id="ai-p3">
+            Mi planteamiento es simple: si una herramienta me ayuda a aprender mejor,
+            iterar con más claridad y entregar con más calidad, quiero dominarla. La IA
+            me interesa justo por eso: como apoyo técnico para trabajar con más enfoque,
+            no como una forma de evitar aprender.
+          </p>
+        </div>
       </div>
     </div>
   </section>

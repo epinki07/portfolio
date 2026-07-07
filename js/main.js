@@ -202,7 +202,7 @@
   }
 
   const awsCertModal = document.getElementById('modal-aws-pdf');
-  [document.getElementById('aws-cert-trigger'), document.getElementById('aws-cert-logro-trigger')]
+  [document.getElementById('aws-cert-logro-trigger')]
     .filter(Boolean)
     .forEach(trigger => {
       if (!awsCertModal) return;
