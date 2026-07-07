@@ -186,6 +186,40 @@
     });
   }
 
+  const ciscoCertTrigger = document.getElementById('cisco-cert-trigger');
+  const ciscoCertModal = document.getElementById('modal-cisco-pdf');
+  if (ciscoCertTrigger && ciscoCertModal) {
+    ciscoCertTrigger.setAttribute('role', 'button');
+    ciscoCertTrigger.setAttribute('tabindex', '0');
+    ciscoCertTrigger.style.cursor = 'pointer';
+    ciscoCertTrigger.addEventListener('click', () => openModal(ciscoCertModal));
+    ciscoCertTrigger.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(ciscoCertModal);
+      }
+    });
+  }
+
+  const awsCertModal = document.getElementById('modal-aws-pdf');
+  [document.getElementById('aws-cert-trigger'), document.getElementById('aws-cert-logro-trigger')]
+    .filter(Boolean)
+    .forEach(trigger => {
+      if (!awsCertModal) return;
+      if (trigger.tagName !== 'BUTTON') {
+        trigger.setAttribute('role', 'button');
+        trigger.setAttribute('tabindex', '0');
+      }
+      trigger.style.cursor = 'pointer';
+      trigger.addEventListener('click', () => openModal(awsCertModal));
+      trigger.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openModal(awsCertModal);
+        }
+      });
+    });
+
   document.querySelectorAll('.modal-overlay').forEach(overlay => {
     overlay.addEventListener('click', event => {
       if (event.target === overlay) closeModal(overlay);
@@ -280,6 +314,7 @@
     ...document.querySelectorAll('.skill-card'),
     ...document.querySelectorAll('.about-card'),
     ...document.querySelectorAll('.about-body'),
+    ...document.querySelectorAll('.latest-card'),
   ];
   revealEls.forEach(element => element.classList.add('reveal'));
   const revealObs = new IntersectionObserver(entries => {

@@ -26,12 +26,13 @@ portfolio/
 ├── js/
 │   ├── main.js           # Lógica: tema, i18n, animaciones, formulario
 │   └── i18n.js           # Traducciones ES / EN
-├── assets/               # Assets estáticos adicionales
-├── cv/                   # CV en PDF (próximamente)
+├── assets/               # Assets estáticos adicionales y badges
+│   └── aws-academy-cloud-operations-badge.png
+├── cv/                   # CV y certificados verificables en PDF
+│   └── AWS_Academy_Cloud_Operations_Diego_Ramirez_2026.pdf
 ├── index.html            # Página principal
 ├── profile.jpg           # Foto de perfil
 ├── buildathon-constancia.png  # Certificado StarkNet Buildathon 2025
-├── robots.txt
 └── sitemap.xml
 ```
 
@@ -43,7 +44,8 @@ portfolio/
 - **Internacionalización** — ES/EN sin librerías externas
 - **Scroll reveal** — Intersection Observer API
 - **Skill bars animadas** — animación on-scroll
-- **Modal lightbox** — certificado del Buildathon
+- **Modales de evidencias** — certificados e insignias en PDF / imagen
+- **Sección "Lo más reciente"** — evidencia AWS Academy Cloud Operations
 - **SEO estructurado** — JSON-LD Schema.org Person, sitemap con hreflang
 - **Responsive** — mobile-first, breakpoints en 768px y 560px
 
