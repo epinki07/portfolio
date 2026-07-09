@@ -220,6 +220,25 @@
       });
     });
 
+  const awsFoundationsCertModal = document.getElementById('modal-aws-foundations-pdf');
+  [document.getElementById('aws-foundations-cert-logro-trigger')]
+    .filter(Boolean)
+    .forEach(trigger => {
+      if (!awsFoundationsCertModal) return;
+      if (trigger.tagName !== 'BUTTON') {
+        trigger.setAttribute('role', 'button');
+        trigger.setAttribute('tabindex', '0');
+      }
+      trigger.style.cursor = 'pointer';
+      trigger.addEventListener('click', () => openModal(awsFoundationsCertModal));
+      trigger.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openModal(awsFoundationsCertModal);
+        }
+      });
+    });
+
   document.querySelectorAll('.modal-overlay').forEach(overlay => {
     overlay.addEventListener('click', event => {
       if (event.target === overlay) closeModal(overlay);
