@@ -1,81 +1,74 @@
-# Diego Ramirez Magaña — Portafolio personal
+# Diego Ramirez Magaña — Portafolio profesional
 
-Portafolio personal construido con HTML, CSS y JavaScript vanilla. Sin frameworks ni dependencias — todos los sistemas (tema, i18n, animaciones, formulario) están implementados desde cero.
+Portafolio personal de Diego Ramirez Magaña, estudiante de Ingenieria en Software y Negocios Digitales. El sitio presenta proyectos, logros, certificados verificables y evidencia de trabajo en backend, cloud, Android, IoT, IA aplicada y blockchain.
 
-**Live:** https://epinki07.github.io/portfolio/
+**Sitio publicado:** https://epinki07.github.io/portfolio/
 
----
+## Enfoque
 
-## Stack
+Este repositorio no es una plantilla publica. Es una pieza de presentacion profesional para reclutamiento, practicas, roles junior y revision tecnica del perfil.
 
-| Capa | Tecnología |
-|---|---|
-| Markup | HTML5 semántico (ARIA, JSON-LD, OpenGraph) |
-| Estilos | CSS3 con custom properties, responsive en 3 breakpoints |
-| Lógica | JavaScript ES6+ vanilla (sin dependencias) |
-| Hosting | GitHub Pages (rama `main`) |
+Prioriza:
 
----
+- Evidencia verificable: certificados PDF, badges Credly, constancias y enlaces publicos.
+- Proyectos con contexto: stack, alcance, decision tecnica y estado de publicacion.
+- Proteccion de propiedad: proyectos sensibles o privados se documentan como caso de producto sin exponer codigo reutilizable.
+- SEO profesional: Open Graph, Twitter Cards, JSON-LD Schema.org, sitemap y contenido bilingue ES/EN.
+
+## Proyectos destacados
+
+| Proyecto | Estado | Stack principal | Nota |
+|---|---:|---|---|
+| WebTrack 2 | Demo publica / repo privado | JavaScript, Supabase, Cloudflare Pages, PWA | Producto desplegado; codigo privado por seguridad y propiedad |
+| FinanTrack | Repo publico | Kotlin, Android, Room, MVVM, .NET | App de finanzas personales con enfoque de privacidad local |
+| Pokedex API | Repo publico | Python, FastAPI, REST, JSON | API documentada con reglas de negocio y pruebas manuales |
+| SQAD | Repo publico | Java, POO, CSV | Control de calidad para almacenes de alimentos |
+| StarkNet contracts | Repo publico | Cairo, StarkNet, smart contracts | Evidencia del 1er lugar Buildathon |
+
+## Certificados y evidencias
+
+Se publican solo credenciales profesionales aptas para portafolio:
+
+- AWS Academy Cloud Foundations, 20 h.
+- AWS Academy Cloud Operations, 40 h.
+- Cisco Networking Academy Network Technician Career Path, verificado por Credly.
+- Udemy Java con 100 ejercicios practicos, 21 h.
+- Membresia IEEE.
+- Constancia StarkNet Buildathon 2025.
+
+Documentos personales, fiscales, identificaciones, llaves, tokens o certificados con documento de identidad visible no deben publicarse en este repositorio. Para esos casos se requiere una version redactada.
 
 ## Estructura
 
-```
+```text
 portfolio/
-├── css/
-│   └── styles.css        # Estilos globales + tema claro/oscuro
-├── js/
-│   ├── main.js           # Lógica: tema, i18n, animaciones, formulario
-│   └── i18n.js           # Traducciones ES / EN
-├── assets/               # Assets estáticos adicionales y badges
-│   ├── aws-academy-cloud-foundations-badge.png
-│   └── aws-academy-cloud-operations-badge.png
-├── cv/                   # CV y certificados verificables en PDF
-│   ├── AWS_Academy_Cloud_Foundations_Diego_Ramirez_2026.pdf
-│   └── AWS_Academy_Cloud_Operations_Diego_Ramirez_2026.pdf
-├── index.html            # Página principal
-├── profile.jpg           # Foto de perfil
-├── buildathon-constancia.png  # Certificado StarkNet Buildathon 2025
+├── assets/               # Badges, QR y capturas publicables
+├── blog/                 # Notas tecnicas breves
+├── css/styles.css        # Estilos globales, responsive y temas
+├── cv/                   # CV web y certificados PDF verificables
+├── js/main.js            # Tema, modales, menu, animaciones
+├── js/i18n.js            # Traducciones ES/EN
+├── index.html            # Pagina principal
+├── NOTICE.md             # Derechos y uso restringido
+├── robots.txt
 └── sitemap.xml
 ```
 
----
+## Ejecutar localmente
 
-## Funcionalidades
-
-- **Tema claro/oscuro** — persiste en `localStorage`
-- **Internacionalización** — ES/EN sin librerías externas
-- **Scroll reveal** — Intersection Observer API
-- **Skill bars animadas** — animación on-scroll
-- **Modales de evidencias** — certificados e insignias en PDF / imagen
-- **Sección "Lo más reciente"** — evidencias AWS Academy Cloud Foundations y Cloud Operations
-- **SEO estructurado** — JSON-LD Schema.org Person, sitemap con hreflang
-- **Responsive** — mobile-first, breakpoints en 768px y 560px
-
----
-
-## Correr localmente
-
-No necesita build ni `npm install`. Basta con servir los archivos estáticos:
+No requiere build ni dependencias.
 
 ```bash
-# Con Python
+cd portfolio
 python3 -m http.server 3000
-
-# Con Node (npx)
-npx serve .
-
-# Con VS Code
-# Instala la extensión Live Server y abre con Go Live
 ```
 
-Luego abre `http://localhost:3000` en el navegador.
+Abrir `http://localhost:3000`.
 
----
+## Derechos de uso
 
-## Sobre mí
+Copyright (c) 2026 Diego Ramirez Magaña. Todos los derechos reservados.
 
-Estudiante de **Ingeniería en Software y Negocios Digitales** en el Tecnológico del Software (Mérida, México). Busco prácticas y roles junior en backend.
+El codigo, diseno, textos, certificados, imagenes y materiales de proyectos se publican para revision profesional. No se concede permiso para copiar, redistribuir, vender, sublicenciar, republicar o reutilizar este portafolio ni sus proyectos como base de otro trabajo.
 
-- **Email:** dramirezmagana@gmail.com
-- **LinkedIn:** [diego-ramirez-magaña](https://www.linkedin.com/in/diego-ramirez-maga%C3%B1a-b15022298/)
-- **GitHub:** [epinki07](https://github.com/epinki07)
+Ver [NOTICE.md](NOTICE.md).

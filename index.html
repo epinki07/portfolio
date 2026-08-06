@@ -11,7 +11,12 @@
   <meta property="og:type"        content="website"/>
   <meta property="og:title"       id="meta-og-title" content="Diego Ramirez Magaña | Software, backend e innovación aplicada"/>
   <meta property="og:description" id="meta-og-description" content="Estudiante de software con proyectos en Java, Spring Boot, Python, IoT y StarkNet. Dos premios en competencias. Busco prácticas en backend, REST APIs, MySQL. Abierto a roles junior."/>
-  <meta property="og:image"       content="buildathon-constancia.png"/>
+  <meta property="og:url"         content="https://epinki07.github.io/portfolio/"/>
+  <meta property="og:image"       content="https://epinki07.github.io/portfolio/buildathon-constancia.png"/>
+  <meta name="twitter:card"       content="summary_large_image"/>
+  <meta name="twitter:title"      content="Diego Ramirez Magaña | Portafolio"/>
+  <meta name="twitter:description" content="Backend, cloud, Android, IoT y proyectos con evidencia verificable."/>
+  <meta name="twitter:image"      content="https://epinki07.github.io/portfolio/buildathon-constancia.png"/>
   <meta name="description"        id="meta-description" content="Portafolio de Diego Ramirez Magaña. Estudiante de software con proyectos en Java, Spring Boot, Python, REST APIs, MySQL, IoT. 2 premios en competencias. Abierto a prácticas y oportunidades junior en backend."/>
   <meta name="author"             content="Diego Ramirez Magaña"/>
   <meta name="theme-color"        content="#3b82f6"/>
@@ -99,8 +104,16 @@
         "dateCreated": "2026-07-06"
       }
     ],
+    "memberOf": {
+      "@type": "Organization",
+      "name": "IEEE",
+      "url": "https://www.ieee.org/"
+    },
     "knowsAbout": [
       "Java", "Python", "HTML", "POO",
+      "Kotlin", "Android", "Room", "MVVM",
+      "Spring Boot", "FastAPI", "REST APIs", "PostgreSQL",
+      "Supabase", "Row Level Security", "Cloudflare Pages", "GitHub Actions",
       "StarkNet", "Cairo", "Smart Contracts", "Blockchain",
       "Linux", "Kali Linux", "Cisco Packet Tracer",
       "AWS", "Streamlit", "Git"
@@ -117,14 +130,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/styles.css"/>
 
-  <!-- Google Analytics 4 — reemplaza G-XXXXXXXXXX con tu Measurement ID desde analytics.google.com -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
+  <!-- Analytics desactivado hasta configurar un Measurement ID real. -->
 </head>
 <body>
 
@@ -196,7 +202,7 @@
           </div>
         </div>
 
-        <a href="#reciente" class="latest-hero-link" id="hero-latest-link">Nuevo: AWS Academy Cloud Foundations · 20 h</a>
+        <a href="#reciente" class="latest-hero-link" id="hero-latest-link">Nuevo: WebTrack 2 · PWA cloud privada</a>
 
         <div class="hero-btns">
           <a href="#portafolio" class="btn btn-primary" id="hero-btn-achievements">Ver proyectos clave</a>
@@ -542,7 +548,7 @@
             <p id="achievement-cisco-desc">
               Credencial de Cisco Networking Academy por completar el <strong>Network Technician Career Path</strong>: estándares y protocolos, comunicación en redes Ethernet conmutadas, IPv4/IPv6, configuración segura de routers/wireless, capa de transporte, DNS y DHCP, troubleshooting y buenas prácticas de help desk. Emitida el 1 de mayo de 2026.
             </p>
-            <div class="constancia-thumb" id="cisco-cert-trigger">
+            <a class="constancia-thumb" href="https://www.credly.com/badges/a288bd71-a73c-40fb-9f00-145ce018b2ae/public_url" target="_blank" rel="noopener noreferrer">
               <div class="udemy-cert-preview" aria-hidden="true">
                 <svg width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
                   <rect width="32" height="40" rx="4" fill="var(--accent-soft-bg)"/>
@@ -554,10 +560,10 @@
                 </svg>
               </div>
               <div class="constancia-thumb-info">
-                <span class="constancia-thumb-name" id="cisco-cert-title">📄 Certificado oficial Cisco</span>
-                <span class="constancia-thumb-meta" id="cisco-cert-meta">Network Technician Career Path · Clic para ver →</span>
+                <span class="constancia-thumb-name" id="cisco-cert-title">🔗 Badge oficial Cisco</span>
+                <span class="constancia-thumb-meta" id="cisco-cert-meta">Network Technician Career Path · Verificar en Credly →</span>
               </div>
-            </div>
+            </a>
             <p style="margin-top:.5rem; font-size:.75rem; color:var(--muted);">
               <a href="https://www.credly.com/badges/a288bd71-a73c-40fb-9f00-145ce018b2ae/public_url" target="_blank" rel="noopener noreferrer" id="achievement-cisco-link" style="color:var(--muted); text-decoration:underline;">Verificar badge en Credly →</a>
             </p>
@@ -608,6 +614,33 @@
           <span class="logro-badge badge-blue" id="achievement-aws-foundations-badge">☁️ AWS · 20 h</span>
         </div>
 
+        <div class="logro-card logro-card--expandable">
+          <div class="logro-icon thumb-blue" aria-hidden="true">⚙️</div>
+          <div class="logro-info">
+            <h3 id="achievement-ieee-title">Membresía IEEE</h3>
+            <p id="achievement-ieee-desc">
+              Evidencia de membresía IEEE, útil para reforzar interés profesional en ingeniería, estándares, comunidad técnica y aprendizaje continuo más allá de los cursos.
+            </p>
+            <a class="constancia-thumb" href="cv/member-ieee-2026.pdf" target="_blank" rel="noopener noreferrer">
+              <div class="udemy-cert-preview" aria-hidden="true">
+                <svg width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+                  <rect width="32" height="40" rx="4" fill="var(--accent-soft-bg)"/>
+                  <rect x="6" y="8" width="20" height="2" rx="1" fill="var(--accent)"/>
+                  <rect x="6" y="13" width="14" height="1.5" rx="0.75" fill="var(--muted)"/>
+                  <rect x="6" y="17" width="16" height="1.5" rx="0.75" fill="var(--muted)"/>
+                  <rect x="6" y="21" width="12" height="1.5" rx="0.75" fill="var(--muted)"/>
+                  <rect x="6" y="28" width="20" height="4" rx="2" fill="var(--accent)" opacity="0.3"/>
+                </svg>
+              </div>
+              <div class="constancia-thumb-info">
+                <span class="constancia-thumb-name" id="ieee-cert-title">📄 Evidencia IEEE</span>
+                <span class="constancia-thumb-meta" id="ieee-cert-meta">Membresía · Ver PDF →</span>
+              </div>
+            </a>
+          </div>
+          <span class="logro-badge badge-blue" id="achievement-ieee-badge">⚙️ IEEE</span>
+        </div>
+
       </div>
     </div>
   </section>
@@ -619,8 +652,25 @@
       <h2 class="section-title" id="latest-title">Evidencia <span>reciente</span></h2>
       <div class="divider"></div>
       <p class="section-sub" id="latest-sub">
-        Nueva evidencia agregada al portafolio: formación cloud verificable con PDFs completos y badges digitales.
+        Nueva evidencia agregada al portafolio: un producto web desplegado, formación cloud verificable y certificados profesionales publicables.
       </p>
+
+      <div class="latest-card">
+        <div class="latest-badge-wrap latest-badge-wrap--wide">
+          <img src="assets/webtrack-2-screenshot.jpeg" alt="Vista de WebTrack 2 desplegado en Cloudflare Pages" class="latest-badge-img latest-badge-img--wide" loading="lazy" decoding="async" width="320" height="180"/>
+        </div>
+        <div class="latest-info">
+          <span class="latest-kicker" id="latest-webtrack-kicker">Producto / PWA / Cloudflare + Supabase</span>
+          <h3 id="latest-webtrack-title">WebTrack 2 — seguimiento web privado y desplegado</h3>
+          <p id="latest-webtrack-desc">
+            Proyecto full-stack publicado como PWA en <strong>Cloudflare Pages</strong>, con autenticación y datos en <strong>Supabase</strong>, exportación CSV/PDF, respaldos JSON y flujos de cuenta. El código permanece privado por seguridad y protección de propiedad, pero el producto se documenta como caso real.
+          </p>
+          <div class="latest-actions">
+            <a class="btn btn-primary" id="latest-webtrack-demo" href="https://webtrack-2.pages.dev" target="_blank" rel="noopener noreferrer">Abrir demo</a>
+            <a class="btn btn-ghost" id="latest-webtrack-qr" href="assets/webtrack-2-qr.png" target="_blank" rel="noopener noreferrer">Ver QR</a>
+          </div>
+        </div>
+      </div>
 
       <div class="latest-card">
         <div class="latest-badge-wrap">
@@ -691,6 +741,28 @@
             <span class="gh-lang"><span class="lang-dot" style="background:#A97BFF"></span> Kotlin</span>
             <span class="gh-lang">Android · Room · .NET</span>
             <span class="gh-badge-extra">Arquitectura</span>
+          </div>
+        </div>
+
+        <!-- WEBTRACK 2 - PRODUCTO FULL-STACK PRIVADO -->
+        <div class="gh-card">
+          <div class="gh-header">
+            <a href="https://webtrack-2.pages.dev" target="_blank" rel="noopener noreferrer" class="gh-repo-name">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--muted)" aria-hidden="true" focusable="false"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+              WebTrack 2
+            </a>
+            <span class="gh-date">2026 · Ago</span>
+          </div>
+          <p class="gh-desc" id="project-webtrack-desc">
+            PWA full-stack con <strong>Supabase Auth/PostgreSQL/RLS</strong> y
+            despliegue en <strong>Cloudflare Pages</strong>. Incluye exportación CSV/PDF,
+            backup JSON, eliminación de cuenta por Edge Function y documentación interna.
+            El repositorio se mantiene privado; se publica demo y caso de producto.
+          </p>
+          <div class="gh-footer">
+            <span class="gh-lang"><span class="lang-dot lang-html"></span> JavaScript</span>
+            <span class="gh-lang">Supabase · Cloudflare · PWA</span>
+            <span class="gh-badge-extra">Repo privado</span>
           </div>
         </div>
 
@@ -1088,6 +1160,16 @@
               </svg>
               GitHub
             </a>
+            <a href="cv/" target="_blank" class="contact-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <line x1="10" y1="9" x2="8" y2="9"/>
+              </svg>
+              <span id="contact-cv-label">CV web</span>
+            </a>
           </div>
         </div>
       </div>
@@ -1115,24 +1197,6 @@
         loading="lazy">
         <p>Tu navegador no puede mostrar el PDF.
           <a href="cv/certificado-udemy-java.pdf" target="_blank" rel="noopener noreferrer">Descárgalo aquí</a>
-        </p>
-      </iframe>
-    </div>
-  </div>
-
-  <!-- MODAL PDF CISCO -->
-  <div class="modal-overlay" id="modal-cisco-pdf" role="dialog" aria-modal="true" aria-label="Certificado Cisco Network Technician">
-    <div class="modal-inner modal-inner--pdf">
-      <button class="modal-close" type="button" aria-label="Cerrar certificado">✕</button>
-      <iframe
-        src="cv/certificado-cisco-network-technician.pdf"
-        title="Cisco Networking Academy — Network Technician Career Path"
-        width="100%"
-        height="100%"
-        style="border:none; border-radius:8px;"
-        loading="lazy">
-        <p>Tu navegador no puede mostrar el PDF.
-          <a href="cv/certificado-cisco-network-technician.pdf" target="_blank" rel="noopener noreferrer">Descárgalo aquí</a>
         </p>
       </iframe>
     </div>
@@ -1194,7 +1258,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p id="footer-text">Hecho con ganas por <span>Diego Ramirez Magaña</span> · 2026 · Tecnológico del Software</p>
+    <p><span id="footer-text">Hecho con ganas por <span>Diego Ramirez Magaña</span> · 2026 · Tecnológico del Software</span> · <a href="NOTICE.md" id="footer-rights">Uso restringido</a></p>
   </footer>
 
   <!-- CURSOR LIGHT (se oculta por CSS en móvil / reduced-motion) -->

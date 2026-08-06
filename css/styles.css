@@ -470,12 +470,19 @@ section {
   align-items: center;
   justify-content: center;
 }
+.latest-badge-wrap--wide { min-height: 150px; }
 .latest-badge-img {
   width: 100%;
   max-width: 160px;
   aspect-ratio: 1;
   object-fit: contain;
   display: block;
+}
+.latest-badge-img--wide {
+  max-width: 320px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
 }
 .latest-info { min-width: 0; }
 .latest-kicker {
@@ -624,6 +631,7 @@ section {
   border-radius: 8px; padding: .5rem .75rem;
   text-decoration: none; transition: border-color .2s, background .2s;
   cursor: pointer;
+  color: inherit;
 }
 .constancia-thumb:hover { border-color: var(--accent); background: var(--card-hover-accent-bg); }
 .constancia-thumb-img {

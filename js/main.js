@@ -186,21 +186,6 @@
     });
   }
 
-  const ciscoCertTrigger = document.getElementById('cisco-cert-trigger');
-  const ciscoCertModal = document.getElementById('modal-cisco-pdf');
-  if (ciscoCertTrigger && ciscoCertModal) {
-    ciscoCertTrigger.setAttribute('role', 'button');
-    ciscoCertTrigger.setAttribute('tabindex', '0');
-    ciscoCertTrigger.style.cursor = 'pointer';
-    ciscoCertTrigger.addEventListener('click', () => openModal(ciscoCertModal));
-    ciscoCertTrigger.addEventListener('keydown', event => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        openModal(ciscoCertModal);
-      }
-    });
-  }
-
   const awsCertModal = document.getElementById('modal-aws-pdf');
   [document.getElementById('aws-cert-logro-trigger')]
     .filter(Boolean)

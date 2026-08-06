@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV — Diego Ramirez Magaña</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @media print {
+      @page { margin: 0; size: A4 portrait; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .no-print { display: none !important; }
+      .page { box-shadow: none; margin: 0; width: 100%; height: 100%; }
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #c9cdd4;
+      color: #111;
+      font-size: 11px;
+    }
+
+    /* PRINT BAR */
+    .print-bar {
+      background: #1a1a1a;
+      color: #fff;
+      padding: .55rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .print-bar span { font-size: .75rem; opacity: .55; letter-spacing: .04em; }
+    .btn-print {
+      background: #fff;
+      color: #111;
+      border: none;
+      padding: .35rem 1.1rem;
+      font-size: .75rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      letter-spacing: .03em;
+    }
+
+    /* PAGE */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      overflow: hidden;
+      margin: 1.2rem auto;
+      background: #fff;
+      box-shadow: 0 6px 32px rgba(0,0,0,.22);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ── */
+    .cv-header {
+      padding: 26px 28px 18px;
+      border-bottom: 2px solid #111;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 16px;
+    }
+    .cv-name {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -.3px;
+      color: #111;
+      line-height: 1;
+    }
+    .cv-title {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #555;
+      margin-top: 5px;
+      margin-bottom: 12px;
+    }
+    .cv-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0;
+    }
+    .cv-contact {
+      font-size: 8.5px;
+      color: #333;
+      text-decoration: none;
+      letter-spacing: .01em;
+    }
+    .cv-sep {
+      color: #aaa;
+      margin: 0 8px;
+      font-size: 9px;
+    }
+    .cv-avatar {
+      width: 78px;
+      height: 78px;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.05);
+    }
+
+    /* ── BODY ── */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 172px 1fr;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── SIDEBAR ── */
+    .cv-sidebar {
+      padding: 16px 14px 14px;
+      border-right: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      overflow: hidden;
+    }
+
+    /* ── MAIN ── */
+    .cv-main {
+      padding: 16px 20px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      overflow: hidden;
+    }
+
+    /* ── SECTION TITLE ── */
+    .sec-title {
+      font-size: 7px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #111;
+      padding-bottom: 3px;
+      border-bottom: 1px solid #111;
+      margin-bottom: 7px;
+    }
+
+    /* ── PROFILE ── */
+    .profile-text {
+      font-size: 8.2px;
+      color: #333;
+      line-height: 1.65;
+      text-align: justify;
+    }
+
+    /* ── SKILLS ── */
+    .skill-block { margin-bottom: 6px; }
+    .skill-label {
+      font-size: 7px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #777;
+      margin-bottom: 3px;
+    }
+    .skill-list {
+      font-size: 8px;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-degree { font-size: 8.5px; font-weight: 700; color: #111; line-height: 1.3; }
+    .edu-school { font-size: 8px; color: #444; margin-top: 1px; }
+    .edu-date   { font-size: 7.5px; color: #888; margin-top: 1px; }
+
+    /* ── CERTS ── */
+    .cert-row { margin-bottom: 5px; }
+    .cert-name { font-size: 8px; font-weight: 600; color: #111; line-height: 1.35; }
+    .cert-meta { font-size: 7.5px; color: #777; margin-top: 1px; }
+
+    /* ── LANGS ── */
+    .lang-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 8px;
+      margin-bottom: 2px;
+    }
+    .lang-name  { font-weight: 600; color: #111; }
+    .lang-level { color: #777; font-style: italic; }
+
+    /* ── SOFT SKILLS ── */
+    .soft-list {
+      font-size: 8px;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    /* ── AWARDS ── */
+    .award-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+    .award-title {
+      font-size: 8.5px;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.3;
+    }
+    .award-date {
+      font-size: 7.5px;
+      color: #888;
+      white-space: nowrap;
+      font-style: italic;
+    }
+    .award-org {
+      font-size: 7.5px;
+      color: #555;
+      font-style: italic;
+      margin-bottom: 2px;
+    }
+    .award-desc {
+      font-size: 7.8px;
+      color: #333;
+      line-height: 1.6;
+      text-align: justify;
+      margin-bottom: 8px;
+    }
+    .award-desc:last-child { margin-bottom: 0; }
+
+    /* ── PROJECTS ── */
+    .project-row { margin-bottom: 7px; }
+    .project-row:last-child { margin-bottom: 0; }
+    .project-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+    .project-name {
+      font-size: 8.5px;
+      font-weight: 700;
+      color: #111;
+    }
+    .project-name a { color: inherit; text-decoration: none; }
+    .project-stack {
+      font-size: 7.5px;
+      color: #777;
+      font-style: italic;
+      white-space: nowrap;
+    }
+    .project-desc {
+      font-size: 7.8px;
+      color: #333;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    /* ── FOOTER ── */
+    .cv-footer {
+      border-top: 1px solid #ddd;
+      padding: 4px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cv-footer span, .cv-footer a {
+      font-size: 7px;
+      color: #aaa;
+      text-decoration: none;
+      letter-spacing: .04em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar no-print">
+    <span>CV — Diego Ramirez Magaña · 2026</span>
+    <button class="btn-print" onclick="window.print()">Descargar PDF</button>
+  </div>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="cv-header">
+      <div>
+        <div class="cv-name">Diego Ramirez Magaña</div>
+        <div class="cv-title">Ingeniería en Software &amp; Negocios Digitales &nbsp;·&nbsp; Abierto a prácticas y roles junior en backend</div>
+        <div class="cv-contacts">
+          <a href="mailto:dramirezmagana@gmail.com" class="cv-contact">dramirezmagana@gmail.com</a>
+          <span class="cv-sep">|</span>
+          <a href="https://github.com/epinki07" class="cv-contact">github.com/epinki07</a>
+          <span class="cv-sep">|</span>
+          <a href="https://linkedin.com/in/diego-ramirez-magana-b15022298/" class="cv-contact">linkedin.com/in/diego-ramirez-magana-b15022298</a>
+          <span class="cv-sep">|</span>
+          <span class="cv-contact">Mérida, Yucatán, México</span>
+        </div>
+      </div>
+      <img src="../profile.jpg" alt="Diego Ramirez Magaña" class="cv-avatar"
+           onerror="this.style.display='none'"/>
+    </header>
+
+    <!-- BODY -->
+    <div class="cv-body">
+
+      <!-- SIDEBAR -->
+      <aside class="cv-sidebar">
+
+        <div>
+          <div class="sec-title">Habilidades técnicas</div>
+          <div class="skill-block">
+            <div class="skill-label">Lenguajes</div>
+            <div class="skill-list">Java &nbsp;·&nbsp; Python &nbsp;·&nbsp; Kotlin &nbsp;·&nbsp; JavaScript<br/>Cairo / StarkNet &nbsp;·&nbsp; HTML &amp; CSS</div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Backend &amp; datos</div>
+            <div class="skill-list">Spring Boot &nbsp;·&nbsp; FastAPI &nbsp;·&nbsp; REST APIs<br/>PostgreSQL &nbsp;·&nbsp; Supabase &nbsp;·&nbsp; Streamlit</div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Herramientas</div>
+            <div class="skill-list">Git &amp; GitHub &nbsp;·&nbsp; Linux<br/>Kali Linux &nbsp;·&nbsp; VirtualBox<br/>Cisco Packet Tracer</div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Cloud &amp; Blockchain</div>
+            <div class="skill-list">AWS Academy &nbsp;·&nbsp; Cloudflare Pages<br/>Supabase RLS &nbsp;·&nbsp; StarkNet &nbsp;·&nbsp; DApps</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="sec-title">Habilidades blandas</div>
+          <div class="soft-list">
+            Aprendizaje rápido<br/>
+            Pensamiento analítico<br/>
+            Iniciativa propia<br/>
+            Trabajo en equipo<br/>
+            Ejecución bajo presión
+          </div>
+        </div>
+
+        <div>
+          <div class="sec-title">Educación</div>
+          <div class="edu-degree">Ing. en Software y Negocios Digitales</div>
+          <div class="edu-school">Tecnológico del Software</div>
+          <div class="edu-date">2025 – Actualidad &nbsp;·&nbsp; Mérida, Yucatán</div>
+        </div>
+
+        <div>
+          <div class="sec-title">Certificados</div>
+          <div class="cert-row">
+            <div class="cert-name">Java con 100 ejercicios prácticos (incl. JavaFX)</div>
+            <div class="cert-meta">Udemy &nbsp;·&nbsp; 21 h &nbsp;·&nbsp; Abr 2026</div>
+            <div class="cert-meta" style="color:#aaa; font-size:7px;">Verificación: UC-e1883c64</div>
+          </div>
+          <div class="cert-row">
+            <div class="cert-name">AWS Academy Graduate — Cloud Foundations Training</div>
+            <div class="cert-meta">AWS Academy &nbsp;·&nbsp; 20 h &nbsp;·&nbsp; Jun 2026</div>
+            <div class="cert-meta" style="color:#aaa; font-size:7px;">Evidencia: badge digital en Credly + PDF</div>
+          </div>
+          <div class="cert-row">
+            <div class="cert-name">AWS Academy Graduate — Cloud Operations Training</div>
+            <div class="cert-meta">AWS Academy &nbsp;·&nbsp; 40 h &nbsp;·&nbsp; Jul 2026</div>
+            <div class="cert-meta" style="color:#aaa; font-size:7px;">Evidencia: badge digital en Credly + PDF</div>
+          </div>
+          <div class="cert-row">
+            <div class="cert-name">Cisco Network Technician Career Path</div>
+            <div class="cert-meta">Cisco Networking Academy &nbsp;·&nbsp; May 2026</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="sec-title">Idiomas</div>
+          <div class="lang-row"><span class="lang-name">Español</span><span class="lang-level">Nativo</span></div>
+          <div class="lang-row"><span class="lang-name">Inglés</span><span class="lang-level">Lectura técnica</span></div>
+        </div>
+
+        <div>
+          <div class="sec-title">Portafolio</div>
+          <div style="font-size:7.8px; color:#444;">epinki07.github.io/portfolio</div>
+        </div>
+
+      </aside>
+
+      <!-- MAIN -->
+      <main class="cv-main">
+
+        <!-- PERFIL -->
+        <div>
+          <div class="sec-title">Perfil profesional</div>
+          <p class="profile-text">
+            Estudiante de <strong>Ingeniería en Software y Negocios Digitales</strong> con enfoque en backend y desarrollo orientado a producto. <strong>Java es mi lenguaje principal</strong>, complementado con Python, JavaScript y exploración en blockchain con StarkNet. Cuento con evidencia pública de trabajo —más de 10 repositorios— y dos resultados competitivos verificables, incluyendo un <strong>1.er lugar en un buildathon internacional</strong>, que demuestran capacidad de aprendizaje acelerado y ejecución bajo presión. Busco prácticas o rol junior donde pueda aportar desde el primer día.
+          </p>
+        </div>
+
+        <!-- LOGROS -->
+        <div>
+          <div class="sec-title">Logros y reconocimientos</div>
+
+          <div class="award-row">
+            <div class="award-title">1.er Lugar — StarkNet Buildathon 2025 &nbsp;·&nbsp; Proyecto "Rent Chain"</div>
+            <div class="award-date">Nov 2025</div>
+          </div>
+          <div class="award-org">Competencia internacional de blockchain &nbsp;·&nbsp; StarkNet Foundation</div>
+          <p class="award-desc">Obtuve el primer lugar con <strong>Rent Chain</strong>, plataforma de renta descentralizada construida con contratos inteligentes en Cairo y Layer 2 de StarkNet. Aprendí Cairo desde cero durante las 48 horas del evento y lideré la implementación técnica completa bajo presión competitiva. Resultado verificable con constancia oficial.</p>
+
+          <div class="award-row">
+            <div class="award-title">3.er Lugar — Invent for the Planet 2026 &nbsp;(IFTP2026)</div>
+            <div class="award-date">Feb 2026</div>
+          </div>
+          <div class="award-org">Hackathon universitario internacional &nbsp;·&nbsp; Texas A&amp;M University Network</div>
+          <p class="award-desc">Desarrollé <strong>Food Sense</strong>, solución IoT para monitoreo remoto de refrigeradores con sensores, cámaras y alertas en tiempo real mediante ESP32. Integré hardware y backend en equipo bajo condiciones de competencia, entregando el sistema funcional el día de presentación.</p>
+        </div>
+
+        <!-- PROYECTOS -->
+        <div>
+          <div class="sec-title">Proyectos seleccionados</div>
+
+          <div class="project-row">
+            <div class="project-header">
+              <span class="project-name">WebTrack 2 — PWA desplegada con backend cloud</span>
+              <span class="project-stack">JavaScript &nbsp;·&nbsp; Supabase &nbsp;·&nbsp; Cloudflare &nbsp;·&nbsp; Ago 2026</span>
+            </div>
+            <p class="project-desc">Producto web con autenticación, PostgreSQL/RLS, exportación CSV/PDF, respaldo JSON y eliminación de cuenta mediante Edge Function. Repositorio privado por seguridad; demo pública documentada en el portafolio.</p>
+          </div>
+
+          <div class="project-row">
+            <div class="project-header">
+              <span class="project-name">FinanTrack — app Android de finanzas personales</span>
+              <span class="project-stack">Kotlin &nbsp;·&nbsp; Room &nbsp;·&nbsp; MVVM &nbsp;·&nbsp; Jun 2026</span>
+            </div>
+            <p class="project-desc">Aplicación Android para registrar gastos, analizar notificaciones autorizadas y exportar datos. Incluye privacidad local, arquitectura MVVM y módulo .NET/API REST para validación beta.</p>
+          </div>
+
+          <div class="project-row">
+            <div class="project-header">
+              <span class="project-name">Pokedex-api — API REST documentada</span>
+              <span class="project-stack">Python &nbsp;·&nbsp; FastAPI &nbsp;·&nbsp; Jul 2026</span>
+            </div>
+            <p class="project-desc">API para consultar, filtrar, paginar, crear, actualizar y eliminar registros, con persistencia JSON, reglas de negocio y validación manual desde Swagger.</p>
+          </div>
+
+          <div class="project-row">
+            <div class="project-header">
+              <span class="project-name">SQAD — Sistema de control de calidad para almacenes</span>
+              <span class="project-stack">Java &nbsp;·&nbsp; POO &nbsp;·&nbsp; CSV &nbsp;·&nbsp; Feb 2026</span>
+            </div>
+            <p class="project-desc">Arquitectura por capas para gestionar alimentos refrigerados, congelados y secos con alertas automáticas por temperatura, humedad y caducidad. Desarrollado por iniciativa propia como extensión técnica del proyecto IFTP.</p>
+          </div>
+
+          <div class="project-row">
+            <div class="project-header">
+              <span class="project-name">starknet-contracts — Contratos inteligentes en Cairo</span>
+              <span class="project-stack">Cairo &nbsp;·&nbsp; StarkNet L2 &nbsp;·&nbsp; Nov 2025</span>
+            </div>
+            <p class="project-desc">DigitalVault (almacén de secretos on-chain por dirección) y MessageBoard (tablero descentralizado con eventos indexados). Evidencia de aprendizaje en blockchain y lógica on-chain aplicada.</p>
+          </div>
+
+        </div>
+
+      </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="cv-footer">
+      <span>Diego Ramirez Magaña &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Tecnológico del Software</span>
+      <a href="https://epinki07.github.io/portfolio/">epinki07.github.io/portfolio</a>
+    </footer>
+
+  </div>
+
+</body>
+</html>
