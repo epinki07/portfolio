@@ -21,6 +21,9 @@ Prioriza:
 |---|---:|---|---|
 | WebTrack 2 | Demo publica / showcase publico / codigo cerrado | JavaScript, Supabase, Cloudflare Pages, PWA | Producto desplegado; codigo privado por seguridad y propiedad |
 | FinanTrack | Showcase publico / codigo cerrado | Kotlin, Android, Room, MVVM, .NET | App de finanzas personales con enfoque de privacidad local |
+| POS Restaurante | Showcase publico / codigo cerrado | JavaScript, SQLite, pruebas automatizadas | Sistema POS documentado sin exponer codigo reutilizable |
+| SistemaFacturacion | Repo publico | Java, Spring Boot, JPA, Swagger | API REST documentada con pruebas de servicio |
+| Factura Bot | Showcase publico / codigo cerrado | Python, automatizacion | Proyecto de automatizacion documentado sin exponer integraciones |
 | Pokedex API | Repo publico | Python, FastAPI, REST, JSON | API documentada con reglas de negocio y pruebas manuales |
 | SQAD | Repo publico | Java, POO, CSV | Control de calidad para almacenes de alimentos |
 | StarkNet contracts | Repo publico | Cairo, StarkNet, smart contracts | Evidencia del 1er lugar Buildathon |
