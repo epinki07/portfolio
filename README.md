@@ -19,8 +19,8 @@ Prioriza:
 
 | Proyecto | Estado | Stack principal | Nota |
 |---|---:|---|---|
-| WebTrack 2 | Demo publica / repo privado | JavaScript, Supabase, Cloudflare Pages, PWA | Producto desplegado; codigo privado por seguridad y propiedad |
-| FinanTrack | Repo publico | Kotlin, Android, Room, MVVM, .NET | App de finanzas personales con enfoque de privacidad local |
+| WebTrack 2 | Demo publica / showcase publico / codigo cerrado | JavaScript, Supabase, Cloudflare Pages, PWA | Producto desplegado; codigo privado por seguridad y propiedad |
+| FinanTrack | Showcase publico / codigo cerrado | Kotlin, Android, Room, MVVM, .NET | App de finanzas personales con enfoque de privacidad local |
 | Pokedex API | Repo publico | Python, FastAPI, REST, JSON | API documentada con reglas de negocio y pruebas manuales |
 | SQAD | Repo publico | Java, POO, CSV | Control de calidad para almacenes de alimentos |
 | StarkNet contracts | Repo publico | Cairo, StarkNet, smart contracts | Evidencia del 1er lugar Buildathon |
@@ -35,6 +35,7 @@ Se publican solo credenciales profesionales aptas para portafolio:
 - Udemy Java con 100 ejercicios practicos, 21 h.
 - Membresia IEEE.
 - Constancia StarkNet Buildathon 2025.
+- Constancia StarkNet Bootcamp Merida 2026.
 
 Documentos personales, fiscales, identificaciones, llaves, tokens o certificados con documento de identidad visible no deben publicarse en este repositorio. Para esos casos se requiere una version redactada.
 
