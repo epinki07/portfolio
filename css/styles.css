@@ -732,6 +732,7 @@ section {
 .lang-python  { background: #3572A5; }
 .lang-java    { background: #b07219; }
 .lang-html    { background: #e34c26; }
+.lang-ts      { background: #3178c6; }
 .gh-badge-extra {
   font-size: .68rem; font-weight: 600;
   padding: .2rem .6rem; border-radius: 999px;

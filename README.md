@@ -19,6 +19,7 @@ Prioriza:
 
 | Proyecto | Estado | Stack principal | Nota |
 |---|---:|---|---|
+| LocalLead Scout | Codigo privado / en desarrollo | TypeScript, Next.js, SQLite + Drizzle, LLMs | Prospeccion local, CRM e IA comercial; 141 tests |
 | WebTrack 2 | Demo publica / showcase publico / codigo cerrado | JavaScript, Supabase, Cloudflare Pages, PWA | Producto desplegado; codigo privado por seguridad y propiedad |
 | FinanTrack | Showcase publico / codigo cerrado | Kotlin, Android, Room, MVVM, .NET | App de finanzas personales con enfoque de privacidad local |
 | POS Restaurante | Showcase publico / codigo cerrado | JavaScript, SQLite, pruebas automatizadas | Sistema POS documentado sin exponer codigo reutilizable |
